@@ -1,1 +1,29 @@
-{"title":"Fifteen Years of the Premier League: What Sustained Success Looks Like","slug":"premier-league-15-years","category":"sport","featured":true,"summary":"A long-run Premier League study moving from clean historical data to fair comparisons, performance efficiency and predictive modelling.","key_takeaway":"Sustained football success is not explained by league tables alone: fair per-game comparisons, balanced performance and controlled aggression reveal a richer picture.","source_notebooks":["https://github.com/accidentalscientist/daily_data_analytics_august2025/tree/main/week03"],"analysis_notebook":"../../notebooks/09_premier_league_15_years.ipynb"}
+{
+  "title": "Fifteen Years of the Premier League: What Sustained Success Looks Like",
+  "slug": "premier-league-15-years",
+  "category": "sport",
+  "featured": true,
+  "summary": "A long-run Premier League study moving from clean historical data to fair comparisons, performance efficiency and predictive modelling.",
+  "key_takeaway": "Sustained football success is not explained by league tables alone: fair per-game comparisons, balanced performance and controlled aggression reveal a richer picture.",
+  "source_notebooks": [
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week03/premier_league_15years_part1.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week03/premier_league_15years_part2.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week03/premier_league_15years_part3.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week03/premier_league_15years_part4.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week03/premier_league_15years_part5.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week03/premier_league_15years_part6.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week03/premier_league_15years_part7.ipynb"
+  ],
+  "analysis_notebook": "../../notebooks/09_premier_league_15_years.ipynb",
+  "cover_image": "figures/part1_02.png",
+  "inline_figures": [
+    {
+      "file": "figures/part5_02.png",
+      "caption": "The strongest Premier League teams combine attacking output with defensive control, converting that balance into points per game."
+    },
+    {
+      "file": "figures/part7_03.png",
+      "caption": "Winner discipline varies by season, so yellow cards are a feature to interpret in context rather than a simple explanation for success."
+    }
+  ]
+}
