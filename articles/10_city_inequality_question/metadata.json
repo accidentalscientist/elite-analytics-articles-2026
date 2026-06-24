@@ -1,1 +1,23 @@
-{"title":"The City Inequality Question: What Metropolitan Data Reveals","slug":"city-inequality-question","category":"society","featured":false,"summary":"A global analysis of metropolitan income inequality, data coverage and the value of city-level evidence.","key_takeaway":"National inequality figures can conceal the cities where economic difference is actually experienced; city-level data is essential for understanding where policy must land.","source_notebooks":["https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week02/world_development_part2.ipynb"],"analysis_notebook":"../../notebooks/10_city_inequality_question.ipynb"}
+{
+  "title": "The City Inequality Question: What Metropolitan Data Reveals",
+  "slug": "city-inequality-question",
+  "category": "society",
+  "featured": false,
+  "summary": "A global analysis of metropolitan income inequality, data coverage and the value of city-level evidence.",
+  "key_takeaway": "National inequality figures can conceal the cities where economic difference is actually experienced; city-level data is essential for understanding where policy must land.",
+  "source_notebooks": [
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week02/world_development_part2.ipynb"
+  ],
+  "analysis_notebook": "../../notebooks/10_city_inequality_question.ipynb",
+  "cover_image": "figures/01_city_year_coverage_by_country.png",
+  "inline_figures": [
+    {
+      "file": "figures/02_city_monitoring_coverage.png",
+      "caption": "Repeated observation is uneven across cities, defining where trend analysis is strongest."
+    },
+    {
+      "file": "figures/03_median_gini_over_time.png",
+      "caption": "City-level inequality patterns differ across the countries and years covered by the source data."
+    }
+  ]
+}
