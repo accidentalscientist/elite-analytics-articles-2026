@@ -1,30 +1,25 @@
 # Elite Analytics Articles 2026
 
-Ten long-form, evidence-led articles curated from the Accidental Scientist daily analytics collections. The collection is designed for a reader-facing website and a reproducible technical portfolio.
+This repository contains ten combined, reproducible Jupyter notebooks curated from the Accidental Scientist daily analytics repositories. It intentionally contains notebook source material rather than generated website prose.
 
-## Collection
+## Notebook collection
 
-- Seven energy-transition articles: Australian electricity, the NEM, global renewables, climate evidence, emissions, and demand.
-- Three broader articles: graduate outcomes, urban inequality, and overlooked economic leaders.
+The first seven notebooks are energy and climate focused. The final three demonstrate analytical range in employment, inequality, and global macroeconomics.
 
-Each article includes a concise editorial narrative, an argument to lead with, a figure brief, and links to the source notebooks. The original notebooks remain the evidence trail; this repository is the polished publication layer.
+Each combined notebook:
 
-## Local website test
+- preserves the original Markdown and code cells;
+- identifies every source notebook at the top;
+- strips cached outputs so the collection remains lightweight and reproducible; and
+- separates each source with a clear Markdown divider.
 
-From the Django project root, run:
+## Opening and running locally
 
-```powershell
-.\venv\Scripts\python.exe manage.py import_elite_articles --publish
-.\venv\Scripts\python.exe manage.py runserver
-```
+Open a notebook in JupyterLab or VS Code. The notebook code is preserved, but its source data files are **not** duplicated here. To reproduce charts, clone or download the linked source repositories, then update any relative data paths in the relevant source cells.
 
-The importer creates or updates posts from `articles/`. `--publish` is for local review; omit it to load the collection as drafts.
+This repository is the right place to refine, rerun, and export the final charts. The Django website should only receive a finished article and exported graphics after that review.
 
-## Before public release
-
-Export the named figure from each source notebook, add it through Django admin as the post image, and add any supporting figures using the BlogImage inline. Check data dates and source links again before publishing.
-
-## Source collections
+## Collections used
 
 - [May 2025](https://github.com/accidentalscientist/daily-data-analytics-may2025)
 - [June 2025](https://github.com/accidentalscientist/daily_data_analytics_june2025)
