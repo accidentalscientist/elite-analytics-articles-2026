@@ -1,0 +1,13 @@
+{
+  "title": "Australia's Grid Transition: What 25 Years of NEM Data Reveals",
+  "slug": "australias-grid-transition",
+  "category": "energy",
+  "featured": true,
+  "summary": "A long-run view of Australia's electricity transition, connecting generation, emissions intensity, market value and seasonal system behaviour.",
+  "key_takeaway": "Australia's transition is visible in the data: coal is declining while wind and solar become material contributors, making storage, transmission and flexible demand central to the next phase.",
+  "source_notebooks": [
+    "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day06/nem_data_part1.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day07/nem_data_part2.ipynb"
+  ],
+  "analysis_notebook": "../../notebooks/01_australias_grid_transition.ipynb"
+}
