@@ -1,1 +1,25 @@
-{"title":"Climate Risk, Emissions and Policy: From Rising Seas to National Transition Pathways","slug":"climate-risk-emissions-policy","category":"energy","featured":false,"summary":"A combined climate analysis connecting country emissions, sectoral priorities, sea-level evidence and different national transition pathways.","key_takeaway":"Climate policy is strongest when it links visible risk to the sectors and national systems where emissions reductions can have the greatest leverage.","source_notebooks":["https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day18/climate_change_part2.ipynb","https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day19/climate_change_part3.ipynb","https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day20/climate_change_part4.ipynb"],"analysis_notebook":"../../notebooks/06_climate_risk_emissions_policy.ipynb"}
+{
+  "title": "Climate Risk, Emissions and Policy: From Rising Seas to National Transition Pathways",
+  "slug": "climate-risk-emissions-policy",
+  "category": "energy",
+  "featured": false,
+  "summary": "A combined climate analysis connecting risk, sectoral priorities and national transition pathways.",
+  "key_takeaway": "Climate policy is strongest when it links visible risk to the sectors and national systems where emissions reductions can have the greatest leverage.",
+  "source_notebooks": [
+    "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day18/climate_change_part2.ipynb",
+    "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day19/climate_change_part3.ipynb",
+    "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day20/climate_change_part4.ipynb"
+  ],
+  "analysis_notebook": "../../notebooks/06_climate_risk_emissions_policy.ipynb",
+  "cover_image": "figures/04_sea_level_rise.png",
+  "inline_figures": [
+    {
+      "file": "figures/05_global_emissions_by_sector.png",
+      "caption": "Power, industry and ground transport stand out as major global emissions levers in the source data."
+    },
+    {
+      "file": "figures/09_country_sectoral_clusters.png",
+      "caption": "Sectoral profiles differ across countries, reinforcing that practical transition policy must be tailored to system structure."
+    }
+  ]
+}
