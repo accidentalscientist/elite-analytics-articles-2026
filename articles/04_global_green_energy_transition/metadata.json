@@ -1,1 +1,23 @@
-{"title":"Who Is Really Leading the Green-Energy Transition?","slug":"global-green-energy-transition","category":"energy","featured":true,"summary":"A global renewable-energy analysis that moves beyond league tables to identify distinct national transition trajectories.","key_takeaway":"The most useful comparison is not who produces the most renewable electricity today, but which countries are following credible, repeatable growth trajectories.","source_notebooks":["https://github.com/accidentalscientist/daily_data_analytics_july2025/blob/main/week03_day05/global_green_part1.ipynb"],"analysis_notebook":"../../notebooks/03_global_green_energy_transition.ipynb"}
+{
+  "title": "Who Is Really Leading the Green-Energy Transition?",
+  "slug": "global-green-energy-transition",
+  "category": "energy",
+  "featured": true,
+  "summary": "A global renewable-energy analysis that moves beyond league tables to identify distinct national transition trajectories.",
+  "key_takeaway": "The most useful comparison is not who produces the most renewable electricity today, but which countries are following credible, repeatable growth trajectories.",
+  "source_notebooks": [
+    "https://github.com/accidentalscientist/daily_data_analytics_july2025/blob/main/week03_day05/global_green_part1.ipynb"
+  ],
+  "analysis_notebook": "../../notebooks/04_global_green_energy_transition.ipynb",
+  "cover_image": "figures/01_top_renewable_electricity_countries.png",
+  "inline_figures": [
+    {
+      "file": "figures/03_country_renewable_trends.png",
+      "caption": "The leading countries follow distinct renewable-electricity paths, which is more informative than a single ranking."
+    },
+    {
+      "file": "figures/04_cluster_renewable_trajectories.png",
+      "caption": "Clustering the trajectories shifts the discussion from current rank to the shape and pace of transition."
+    }
+  ]
+}
