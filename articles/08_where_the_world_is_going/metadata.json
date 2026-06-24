@@ -1,1 +1,29 @@
-{"title":"Where the World Is Going: Demography, Prosperity and Economic Resilience","slug":"where-the-world-is-going","category":"data","featured":true,"summary":"A global systems view of demographic change, longevity, trade, macroeconomic health and overlooked economic leaders.","key_takeaway":"National opportunity is multi-dimensional: demographic conditions, trade performance, inflation, debt and regional relationships together tell a more useful story than GDP alone.","source_notebooks":["https://github.com/accidentalscientist/daily_data_analytics_august2025/tree/main/week01"],"analysis_notebook":"../../notebooks/08_where_the_world_is_going.ipynb"}
+{
+  "title": "Where the World Is Going: Demography, Prosperity and Economic Resilience",
+  "slug": "where-the-world-is-going",
+  "category": "data",
+  "featured": true,
+  "summary": "A global systems view of demographic change, longevity, trade, macroeconomic health and overlooked economic leaders.",
+  "key_takeaway": "National opportunity is multi-dimensional: demographic conditions, trade performance, inflation, debt and regional relationships together tell a more useful story than GDP alone.",
+  "source_notebooks": [
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part1.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part2.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part3.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part4.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part5.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part6.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part7.ipynb"
+  ],
+  "analysis_notebook": "../../notebooks/08_where_the_world_is_going.ipynb",
+  "cover_image": "figures/03_median_age_vs_life_expectancy.png",
+  "inline_figures": [
+    {
+      "file": "figures/20_macro_health_quadrant.png",
+      "caption": "Growth is only one dimension of macroeconomic health; inflation, debt and external balance shape resilience too."
+    },
+    {
+      "file": "figures/29_hidden_leaders_component_profile.png",
+      "caption": "A transparent component view prevents a composite score from becoming a black-box ranking."
+    }
+  ]
+}
