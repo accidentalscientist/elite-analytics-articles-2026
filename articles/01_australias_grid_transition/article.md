@@ -14,7 +14,9 @@ Annual totals hide when electricity is produced. The NEM analysis makes the seas
 
 These patterns are not a weakness in renewables; they are design conditions for the next grid. A system with varied generation sources can be more resilient, but it needs transmission to move energy across regions, storage to shift energy across time, and flexible demand to make use of abundant low-cost generation when it is available.
 
-> **Figure 2 — Seasonal generation patterns.** Use the seasonal comparison rather than a dense technology-by-technology panel. The visual should make complementarity between sources easy to see.
+[[image1]]
+
+*Figure 1. Seasonal generation patterns differ by technology, which makes a balanced portfolio more valuable than any single resource on its own.*
 
 ## Emissions intensity is the decision lens
 
@@ -22,7 +24,9 @@ Generation volume alone cannot describe progress. The carbon intensity of each t
 
 This is why the transition should be judged as a system. Replacing generation is only part of the job. The new system must still keep the lights on, manage peaks, cope with weather variation and deliver energy at an acceptable cost.
 
-> **Figure 3 — Emissions intensity by generation technology.** Lead readers from the generation trend to the carbon comparison; the two charts should tell one story.
+[[image2]]
+
+*Figure 2. Carbon intensity differs sharply by technology, making the generation mix a central transition question.*
 
 ## What the data suggests next
 

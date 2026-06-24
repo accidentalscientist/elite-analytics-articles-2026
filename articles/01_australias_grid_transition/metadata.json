@@ -9,5 +9,16 @@
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day06/nem_data_part1.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day07/nem_data_part2.ipynb"
   ],
-  "analysis_notebook": "../../notebooks/01_australias_grid_transition.ipynb"
+  "analysis_notebook": "../../notebooks/01_australias_grid_transition.ipynb",
+  "cover_image": "figures/03_analysis_output.png",
+  "inline_figures": [
+    {
+      "file": "figures/04_analysis_output.png",
+      "caption": "Monthly generation patterns vary by technology, making storage, transmission and flexible demand essential system tools."
+    },
+    {
+      "file": "figures/06_analysis_output.png",
+      "caption": "Carbon intensity differs sharply by generation technology, reinforcing why the composition of supply matters as much as total output."
+    }
+  ]
 }
