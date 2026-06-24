@@ -1,1 +1,24 @@
-{"title":"The Weekly Energy Fingerprint: What Household Demand Tells Us About the Grid","slug":"weekly-energy-fingerprint","category":"energy","featured":false,"summary":"Household electricity data reveals how daily routines create predictable load patterns and why flexible demand belongs in the transition toolkit.","key_takeaway":"Electricity demand is behavioural as well as technical; understanding its weekly rhythm helps a renewable grid use clean supply more effectively.","source_notebooks":["https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day30/household_power_part2.ipynb"],"analysis_notebook":"../../notebooks/07_weekly_energy_fingerprint.ipynb"}
+{
+  "title": "The Weekly Energy Fingerprint: What Household Demand Tells Us About the Grid",
+  "slug": "weekly-energy-fingerprint",
+  "category": "energy",
+  "featured": false,
+  "summary": "Household electricity data reveals how daily routines create predictable load patterns and why flexible demand belongs in the transition toolkit.",
+  "key_takeaway": "Electricity demand is behavioural as well as technical; understanding its weekly rhythm helps a renewable grid use clean supply more effectively.",
+  "source_notebooks": [
+    "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day29/household_power.ipynb",
+    "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day30/household_power_part2.ipynb"
+  ],
+  "analysis_notebook": "../../notebooks/07_weekly_energy_fingerprint.ipynb",
+  "cover_image": "figures/03_power_by_day_of_week.png",
+  "inline_figures": [
+    {
+      "file": "figures/04_weekday_vs_weekend.png",
+      "caption": "Weekdays and weekends follow different hourly demand patterns in the source household data."
+    },
+    {
+      "file": "figures/05_weekly_energy_heatmap.png",
+      "caption": "The hour-by-day heatmap reveals a distinctive weekly demand fingerprint, including recurring morning and evening peaks."
+    }
+  ]
+}
