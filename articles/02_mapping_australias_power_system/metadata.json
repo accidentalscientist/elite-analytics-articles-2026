@@ -1,1 +1,24 @@
-{"title":"Mapping Australia's Power System","slug":"mapping-australias-power-system","category":"energy","featured":true,"summary":"A geographic view of power stations, fuel mix and state differences reveals why the energy transition will be regional as well as national.","key_takeaway":"National targets only become real through regional infrastructure: generation assets, renewable resources and grid constraints are unevenly distributed across Australia.","source_notebooks":["https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day11/aus_energy_part1.ipynb"],"analysis_notebook":"../../notebooks/02_mapping_australias_energy_transition.ipynb"}
+{
+  "title": "Mapping Australia's Power System: Where the Transition Is Taking Shape",
+  "slug": "mapping-australias-power-system",
+  "category": "energy",
+  "featured": true,
+  "summary": "A spatial view of Australia's electricity transition, connecting national generation trends with the geography of renewable capacity.",
+  "key_takeaway": "Australia's transition is a physical build-out: generation resources, geography and grid connections shape whether renewable projects can contribute to a reliable low-emissions system.",
+  "source_notebooks": [
+    "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day11/aus_energy_part1.ipynb",
+    "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day01/intro_ausenergy.ipynb"
+  ],
+  "analysis_notebook": "../../notebooks/02_mapping_australias_energy_transition.ipynb",
+  "cover_image": "figures/07_national_renewables_trend.png",
+  "inline_figures": [
+    {
+      "file": "figures/02_installed_capacity_by_state.png",
+      "caption": "A facility-level renewable-capacity snapshot makes the geographic concentration of development visible."
+    },
+    {
+      "file": "figures/04_capacity_by_state_and_fuel.png",
+      "caption": "The solar and wind mix in the source dataset varies by state, reinforcing that a national transition must be planned region by region."
+    }
+  ]
+}
