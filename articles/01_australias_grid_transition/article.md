@@ -1,46 +1,43 @@
-Australia’s electricity transition is often described through a single number: the renewable share of generation. That number matters, but it is not the whole system. Long-run NEM data shows a more useful picture—one in which generation, emissions intensity, market value and seasonality move together.
+Twenty-five years of National Electricity Market data tell a story that a single number can't. "Renewable share" is the headline everyone reaches for, but sit with the full dataset for a while and a different picture forms — one where generation, emissions, price and season are all pulling on each other at once, and the interesting part is how they move together.
 
-## The grid is changing in more than one dimension
+## Coal built the system it's now leaving
 
-Coal was built into the architecture of the National Electricity Market. It supplied large, predictable volumes of electricity and shaped the transmission, market and workforce systems around it. The historical data shows that this legacy still matters. It also shows that the system is no longer static.
+The NEM wasn't designed around renewables — it was designed around coal. From the 1990s market restructuring onward, a handful of large, predictable, always-on generators set the terms for everything downstream: where transmission lines ran, how the market cleared price, how whole regional towns built their economies around a single plant's payroll. That's not ancient history. Coal still supplied the majority of generation for most of the period this dataset covers, and the physical grid — the wires, the substations, the dispatch logic — was built to serve it. Understanding where the system is going starts with being honest about what it was built for.
 
-Wind and solar have grown from marginal contributors into meaningful parts of the generation mix. Coal’s position has weakened over time, while hydro, gas, batteries and other flexible resources have different roles to play as variable generation expands. The important point is not that one fuel immediately replaces another. It is that the electricity system is moving from a small number of large, controllable generators toward a more diverse and weather-dependent portfolio.
+That legacy doesn't disappear because a chart shows renewables climbing. But the numbers on growth rate are where the story turns sharp. Track it month by month over the full 25 years and black coal's growth rate sits at just 0.3% — essentially flat, a fuel source coasting on inertia. Wind, over the same window, is growing at more than 6% a month on average. That's not a gentle transition. That's one technology standing still while another compounds at roughly twenty times the rate, quietly, in the background of every "renewables are rising" headline.
 
-> **Figure 1 — Long-run generation by fuel type.** Export the clearest fuel-mix trend chart from the analysis notebook and use it here as the article’s opening figure.
+## The grid runs on a rhythm, not a switch
 
-## The transition has a rhythm
-
-Annual totals hide when electricity is produced. The NEM analysis makes the seasonal pattern visible. Solar follows daylight and peaks through the brighter months. Wind has its own seasonal profile. Hydro depends on water availability. Demand itself changes with weather and human routines.
-
-These patterns are not a weakness in renewables; they are design conditions for the next grid. A system with varied generation sources can be more resilient, but it needs transmission to move energy across regions, storage to shift energy across time, and flexible demand to make use of abundant low-cost generation when it is available.
+Annual totals flatten time into a single number, and that's exactly what makes them misleading. Solar peaks with daylight and the brighter months. Wind has its own separate seasonal signature. Hydro rises and falls with water availability, not policy. None of this is a flaw to be engineered away — it's the actual shape of the next grid, and pretending otherwise just delays the harder conversation.
 
 [[image1]]
 
 *Figure 1. Seasonal generation patterns differ by technology, which makes a balanced portfolio more valuable than any single resource on its own.*
 
-## Emissions intensity is the decision lens
+A system built on variable generation only works if three things exist alongside it: transmission to move power across regions, storage to move it across time, and demand flexible enough to use abundant cheap electricity when it's actually available rather than when habit says it should be used.
 
-Generation volume alone cannot describe progress. The carbon intensity of each technology matters, as does the role it plays during different conditions. Coal remains emissions-intensive. Gas can provide flexibility but is not a zero-emissions endpoint. Wind, solar, hydro and storage reduce emissions in different ways and at different times.
+## Price is starting to tell its own story
 
-This is why the transition should be judged as a system. Replacing generation is only part of the job. The new system must still keep the lights on, manage peaks, cope with weather variation and deliver energy at an acceptable cost.
+Here's the part that doesn't get talked about enough: emissions intensity used to be a decent proxy for price pressure, and it's stopped being one. Plot average price against emissions across the full dataset and some of the highest price spikes in recent years land nowhere near the highest emissions points. The two lines are coming apart.
 
 [[image2]]
 
-*Figure 2. Carbon intensity differs sharply by technology, making the generation mix a central transition question.*
+*Figure 2. Carbon intensity differs sharply by technology, making the generation mix a central transition question — but price is increasingly answering to something else.*
+
+That decoupling matters because it changes what "success" looks like. A cleaner grid doesn't automatically mean a cheaper or more stable one — increasingly, price looks driven by scarcity, market structure and the mechanics of the transition itself, not simply by how much carbon is being burned that day.
 
 ## What the data suggests next
 
-The analysis points to three practical questions.
+Three questions fall out of this, and none of them are rhetorical. Can transmission connect renewable-resource regions to demand fast enough to keep pace with wind's compounding growth? Can storage and flexible demand absorb a generation profile that now swings by season and by hour, not just by year? And if price has genuinely decoupled from emissions, what *is* setting it — and can that be steered on purpose rather than watched from the sidelines?
 
-First, can transmission connect renewable-resource regions with demand fast enough? Second, can storage and flexible demand absorb the changing daily and seasonal profile of generation? Third, how will market value change as more low-marginal-cost electricity enters the system?
+Australia has already answered the question of whether renewable generation can grow — at 6%+ a month, compounding, it plainly can. The harder, more interesting question is whether the rest of the system — wires, storage, markets — can keep up with it.
 
-Those questions are not a postscript to the transition. They are the transition. Australia has moved beyond asking whether renewable generation can grow. The more consequential challenge is building the grid that lets it do its best work.
+## Method
 
-## Method and limitations
+Combines two NEM analyses — a rolling growth-rate comparison by fuel type and a price-versus-emissions scatter — using historical, aggregate market data. Aggregate data shows long-run patterns well; it doesn't capture every regional constraint, dispatch event or transmission bottleneck.
 
-This article combines the two NEM analyses in the accompanying notebook. It uses historical, aggregate market data to compare generation, emissions, value and seasonality by fuel type. Aggregate data is powerful for identifying long-run patterns, but it cannot show every regional constraint, dispatch event, transmission bottleneck or consumer outcome. The conclusions should therefore be read as system-level evidence and a prompt for more detailed local analysis.
+## Full analysis and original sources
 
-## Source notebooks
-
+- [Full Elite analysis notebook](https://github.com/accidentalscientist/elite-analytics-articles-2026/blob/main/notebooks/01_australias_grid_transition.ipynb)
 - [NEM Data — Part 1](https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day06/nem_data_part1.ipynb)
 - [NEM Data — Part 2](https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day07/nem_data_part2.ipynb)
