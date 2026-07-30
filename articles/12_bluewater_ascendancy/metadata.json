@@ -3,8 +3,8 @@
   "slug": "bluewater-ascendancy",
   "category": "data",
   "featured": false,
-  "summary": "A personal rebalance of Empire: Total War built on a single wager — that the game is really a trade-and-colony game wearing a war game's coat, and plays better once you admit it.",
-  "key_takeaway": "Re-pricing trade, colonies and fortification — rather than adding new systems — is enough to pull Empire's campaign incentives back toward the oceanic strategy game it was always trying to be.",
+  "summary": "A personal rebalance of Empire: Total War built on a single wager: that the game is really a trade-and-colony game wearing a war game's coat, and plays better once you admit it.",
+  "key_takeaway": "Re-pricing trade, colonies and fortification (rather than adding new systems) is enough to pull Empire's campaign incentives back toward the oceanic strategy game it was always trying to be.",
   "source_notebooks": [],
   "cover_image": "figures/01-esf-france-startpos.png",
   "inline_figures": [
@@ -14,7 +14,7 @@
     },
     {
       "file": "figures/02-rpfm-commodity-prices.png",
-      "caption": "Commodity base prices tripled in RPFM — coffee, cotton, sugar and the rest stop being a rounding error in the treasury."
+      "caption": "Commodity base prices tripled in RPFM: coffee, cotton, sugar and the rest stop being a rounding error in the treasury."
     },
     {
       "file": "figures/04-rpfm-ports-plantations.png",
@@ -26,7 +26,7 @@
     },
     {
       "file": "figures/06-package-responsibilities.png",
-      "caption": "The release split by responsibility — pack files for rules, campaign files for the start position, script file for load order."
+      "caption": "The release split by responsibility: pack files for rules, campaign files for the start position, script file for load order."
     }
   ]
 }
