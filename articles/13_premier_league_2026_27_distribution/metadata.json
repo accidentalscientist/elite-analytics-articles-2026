@@ -1,0 +1,42 @@
+{
+  "title": "The Premier League Is Not a Forecast. It Is a Distribution.",
+  "slug": "premier-league-2026-27-distribution",
+  "date": "2026-08-03",
+  "category": "sport",
+  "featured": true,
+  "summary": "A 2026/27 Premier League forecast built from a constrained top-100 player ranking, five-season club history and three genuinely different season-simulation engines.",
+  "key_takeaway": "Arsenal and Manchester City are separated by less than one percentage point in the weighted forecast; the model disagreement and uncertainty are the central result, not noise to hide.",
+  "source_notebooks": [],
+  "analysis_notebook": "../../notebooks/13_premier_league_2026_27_forecast.ipynb",
+  "cover_image": "figures/01-part-two-evidence-board.png",
+  "inline_figures": [
+    {
+      "file": "figures/02-club-representation.png",
+      "caption": "The constrained Premier League 100 by club, separating merit places from additions required by the three-per-club floor."
+    },
+    {
+      "file": "figures/03-history-vs-squad-strength.png",
+      "caption": "Five-season historical strength against current squad strength, with bubble size showing top-100 representation and colour showing contextual uncertainty."
+    },
+    {
+      "file": "figures/04-model-one-all-clubs.png",
+      "caption": "Model 1's complete structural base case: expected points, 10–90% interval and title probability for every club."
+    },
+    {
+      "file": "figures/05-k-sensitivity.png",
+      "caption": "Title probability under low, base and high K, demonstrating how the uncertainty parameter controls apparent certainty."
+    },
+    {
+      "file": "figures/06-model-disagreement-all-clubs.png",
+      "caption": "All three expected-points estimates for every club, their spread, the consensus point and final ranking."
+    },
+    {
+      "file": "figures/07-three-model-title-probabilities.png",
+      "caption": "Title probabilities from the structural, contextual and machine-learning engines alongside the declared consensus."
+    },
+    {
+      "file": "figures/01-part-two-evidence-board.png",
+      "caption": "The complete evidence board combining Part One inputs, all three Part Two simulations, their theses and the overall call."
+    }
+  ]
+}
