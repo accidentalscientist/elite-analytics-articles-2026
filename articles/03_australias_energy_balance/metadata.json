@@ -4,7 +4,7 @@
   "category": "energy",
   "featured": false,
   "summary": "A whole-of-system view of Australian energy, connecting generation, sectoral consumption, state variation and petroleum dependence.",
-  "key_takeaway": "Electricity is central to decarbonisation, but a credible Australian transition must also confront the broader energy balance ? especially petroleum use and the sectors that depend on it.",
+  "key_takeaway": "Electricity is central to decarbonisation, but a credible Australian transition must also confront the broader energy balance: especially petroleum use and the sectors that depend on it.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day01/intro_ausenergy.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day02/aus_energy_part2.ipynb",
