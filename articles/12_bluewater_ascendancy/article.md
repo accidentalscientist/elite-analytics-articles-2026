@@ -1,17 +1,3 @@
----
-title: "Bluewater Ascendancy: Teaching Empire: Total War to Care About the Sea"
-description: "A personal rebalance of Empire: Total War built on a single wager: that the game is really a trade-and-colony game wearing a war game's coat, and plays better once you admit it."
-date: 2026-07-08
-tags:
-  - Empire Total War
-  - Total War
-  - modding
-  - strategy games
-  - Bluewater Ascendancy
----
-
-# Bluewater Ascendancy: Teaching Empire: Total War to Care About the Sea
-
 Empire: Total War has always held an awkward place in my gaming life. It is not the cleanest game the series has made, and it is nowhere near the most polished. It is full of quirks, brittle systems, hesitant diplomacy, and campaign behaviours that feel held together with sealing wax and optimism. And yet I keep returning to it, because no other Total War game captures the same sense of scale: not scale of armies, but scale of *consequence*. A decision made in Paris can matter in Bengal. A fleet leaving the Caribbean can tip a European war. A single fragile colony can become the hinge on which an empire turns.
 
 That is the promise of Empire, and it remains one of the most exciting the series has ever made. Bluewater Ascendancy grew out of a stubborn wish to see that promise show up more often than the base game allows.
@@ -36,7 +22,7 @@ So the first design principle was narrow and deliberate: keep the campaign's fla
 
 [[image1]]
 
-*Disabling new fort construction and upgrades stops the campaign map from calcifying into a fortress maze.*
+*Figure 1. RPFM's building upgrade table with fort construction and upgrade paths marked REMOVED, so the map can't calcify into a fortress maze.*
 
 This is the least glamorous change in the mod and, I suspect, the one that does the most quiet work.
 
@@ -48,13 +34,13 @@ Bluewater Ascendancy pushes hard here, and it is not subtle by design. Commodity
 
 [[image2]]
 
-*Commodity base prices tripled in RPFM: coffee, cotton, sugar and the rest stop being a rounding error in the treasury.*
+*Figure 2. RPFM's commodities table with base prices tripled across the board, so coffee, cotton, sugar and the rest stop being a rounding error.*
 
 The point is to change what a player *wants*. When a Caribbean possession is worth genuine money, fleets stop being mere ferries and become the thing that protects your income. When a trade port is more than a small income bump, contesting one becomes a real campaign decision. When plantation output doubles, an overseas colony can reshape a national economy instead of decorating a coastline. The Atlantic and the Indian Ocean stop being scenery you sail past on the way to a European war and start being the war.
 
 [[image3]]
 
-*Sea trade-route values and plantation output raised across trading ports, commercial ports and colonial plantations.*
+*Figure 3. Trade and plantation values raised further across ports and colonial holdings, on top of the base commodity multiplier.*
 
 A maritime empire should *feel* materially different from a landlocked one. Under vanilla numbers it rarely does. Under these numbers, it finally must. Suddenly it is easy to understand why states of this period took such enormous risks for islands, coasts, and trading posts. The mod does not explain that logic to you. It lets you feel it in your ledger.
 
@@ -72,7 +58,7 @@ Bluewater Ascendancy does not try to make every minor state a great power: that 
 
 [[image4]]
 
-*Extra starting treasuries for Louisiana, New Spain, Portugal, Saxony and Hannover in the campaign start position.*
+*Figure 4. The minor factions' start-position treasuries, boosted so Louisiana, New Spain, Portugal, Saxony and Hannover open with room to breathe.*
 
 Louisiana is the campaign I most want to support properly in future versions. It is historically fascinating precisely because it sits at the seam of empire: French in identity, American in geography, dependent on wider imperial systems, and permanently exposed to stronger neighbours. I do not want it to become France by another name. I want it to survive as its own problem. The same holds for New Spain and New France, both of which are on the roadmap for careful playable-faction work.
 
@@ -86,7 +72,7 @@ So the release is split by responsibility rather than crammed into one magic fil
 
 [[image5]]
 
-*The release split by responsibility: pack files for rules, campaign files for the start position, script file for load order.*
+*Figure 5. The mod's file layout: pack files carry the rules, campaign files hold the start position, and the script file governs load order.*
 
 The mod also borrows selectively from the wider ecosystem (Empire Enhanced, Empire Extended, Empire Total Flags, and dedicated no-siege work) for visuals and faction flavour, while refusing to drift into a total conversion. I wanted a cleaner campaign, not a different battle game.
 
