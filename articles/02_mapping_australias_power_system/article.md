@@ -1,42 +1,74 @@
-Australia's electricity transition has two dimensions, and only one of them usually makes the news. The national number (renewable generation rising, fossil share falling) is the version everyone quotes. The other dimension is geographical: specific projects, in specific places, connected to specific substations, shaped by local resource quality, land availability, community support and however much spare transmission capacity happens to exist nearby. A national trend can tell you the transition is happening. It can't tell you where, and where turns out to matter more than the headline number suggests.
+Australia's power transition is usually described with a national percentage. The decisive work, however, happens in particular places: a wind farm in one region, a solar project in another, a transmission line joining them to demand and a storage asset covering the hours when neither is producing enough. The transition is national in ambition and stubbornly local in execution.
 
-## The national picture is changing
+Across these five views, Australia is no longer proving that renewable electricity can grow. It is learning that geography, network access and technology mix determine whether growth becomes a reliable power system.
 
-The long-run generation series makes the direction of travel unmistakable: total electricity generation has grown over time, and renewable output has accelerated hardest in the most recent years. But the remaining task was never simply "add more renewable megawatt-hours." It's integrating them into a system that still has to meet demand every hour, every season, in every region, and that's a physical build-out problem as much as a policy one.
+## A national trend is only the first layer
 
-The chart is deliberately zoomed out. It frames the transition as a system-wide shift rather than a scoreboard of individual projects. Zoom back in, though, and the picture gets a lot more uneven.
+The opening figure shows renewable generation accelerating while non-renewable generation remains substantial. That direction matters, but the stacked national view also exposes the size of the integration task. New clean supply is entering a system with established demand, legacy plants and regional constraints; it does not arrive on an empty grid.
 
-## A transition that leans heavily on one state
+The historical context is important. Australia's demand centres are separated by long distances, while its best wind and solar resources are not always located beside them. A project can be economically attractive and still wait for connection, face curtailment or add limited reliability if the surrounding network is not ready.
+
+## Demand kept growing while the mix changed
 
 [[image1]]
 
-*Figure 1. A facility-level snapshot of installed renewable capacity shows that the transition is not evenly distributed across the country.*
+*Figure 2. Total Australian electricity generation rises over the long run, so cleaner supply must replace existing output while serving a larger system.*
 
-Here's how uneven: in the recent-accreditation data behind this map, South Australia alone accounts for roughly 203 MW of new capacity, against Victoria's 40, NSW's 25, WA's 20, Queensland's 11, and Tasmania's essentially rounding-error 0.3 MW. That's not a gentle skew. South Australia is carrying something close to two-thirds of the entire recent build-out on its own.
+The total-generation series prevents the transition from being mistaken for a simple substitution exercise. Australia has not been replacing a fixed quantity of electricity. The system expanded over much of the period, which means renewable growth had to meet new demand before it could displace the full legacy mix.
 
-Wind and solar resources vary by region, and so do grid connections, planning settings and proximity to demand centres, but a two-thirds concentration in one state is a bigger signal than "geography matters" implies. It suggests the next phase of the transition is being decided by whichever states get the planning, connection and investment settings right first, not by the country as a whole moving in step.
+This changes the policy question. Adding capacity is necessary, but the outcome depends on whether new output arrives when demand needs it and whether it can travel to the right region. Growth makes coordination more urgent because the target is moving.
 
-## Capacity is not the same as energy
+## The build-out is geographically concentrated
 
 [[image2]]
 
-*Figure 2. The source dataset's solar and wind capacity mix varies sharply by state, illustrating why local resource and network conditions matter.*
+*Figure 3. A recent-accreditation snapshot maps installed renewable capacity and makes the concentration of new development visible.*
 
-There's a second detail in this dataset worth sitting with: every single accredited facility in the recent-build sample is either solar or wind. Not one entry for gas, hydro, battery storage or anything else. That's a narrower pipeline than "renewables are diversifying" suggests: right now, at the facility level, the build-out is a two-technology story.
+The map turns an abstract transition into a physical one. Within this limited project sample, South Australia carries by far the largest block of recently accredited capacity, while several states contribute much smaller volumes. The precise totals should not be read as a complete generator register—the source is a snapshot—but the pattern is still informative: development responds to local resources, planning, investment conditions and available connections.
 
-That matters because a megawatt of solar and a megawatt of wind don't behave the same way on the grid. They generate at different times, need different transmission planning, and say nothing on their own about whether storage exists to shift supply into the evening peak when people actually need it. Capacity is a useful map. It isn't a complete answer.
+Concentration can be an advantage when a state creates the conditions for rapid investment. It can also create vulnerability if generation grows faster than the interconnectors and storage needed to share it. A national target does not solve a regional bottleneck.
 
-## The decision is now spatial
+## Each state is building a different portfolio
 
-Australia has moved past the abstract question of whether renewables can supply meaningful volumes of electricity: the evidence says they already can. The sharper question is whether projects, transmission and storage are being coordinated fast enough, in the right places, to turn a South-Australia-and-wind-and-solar build-out into a genuinely national, genuinely diversified system.
+[[image3]]
 
-That's why maps belong in this conversation. They make visible what a national trend line hides: where projects cluster, where capacity is scarce, and where the next transmission investment would unlock the most value from generation that's already being built.
+*Figure 4. Installed wind and solar capacity in the source sample varies sharply by state.*
 
-## Method
+The heatmap shows that the geographic story is also a technology story. South Australia's sample is heavily wind-led, while Victoria and other states show different balances. A megawatt of wind and a megawatt of solar are not interchangeable: they produce at different times, cluster in different resource zones and create different network and firming requirements.
 
-Combines a long-run national generation series with a facility-level solar and wind dataset. The facility data is a recent-accreditation snapshot, not a complete generator register: useful for spatial and technology-mix patterns, not for total national capacity claims.
+This is why one national recipe is unlikely to work. Regions need portfolios shaped by their resource profiles and connections, while the national market needs enough diversity to prevent every region from being short at the same time.
 
-## Full analysis and original sources
+## The current pipeline is narrower than the word “renewables” suggests
+
+[[image4]]
+
+*Figure 5. Wind supplies about two-thirds and solar about one-third of capacity in the recent-accreditation sample.*
+
+The technology split is strikingly narrow. Wind and solar account for the full sample, with wind at roughly 65.5% and solar at 34.5%. This is not a weakness in either technology. It is a warning against treating generation capacity as a complete system plan.
+
+Neither side of the chart records the transmission required to move the energy, the batteries or pumped hydro required to shift it, or the demand flexibility that can absorb it. The missing technologies and infrastructure are part of the interpretation, not merely missing categories.
+
+## The transition is national, but never placeless
+
+[[image5]]
+
+*Figure 6. A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument.*
+
+The combined view shows why a national renewable percentage is an incomplete map of change. Demand, installed capacity, resource mix and the development pipeline are distributed unevenly, so every state begins with different assets and different constraints. The same national target therefore creates several distinct engineering tasks.
+
+Read as one argument, the figures say that geography is not background information; it is part of the mechanism. Projects need suitable resources, network access and demand at the other end of the wire. The transition will accelerate where those elements align and stall where one remains missing.
+
+## The transition is a map of dependencies
+
+Across the five figures, the argument becomes more specific. Renewable generation is rising nationally, total generation has also grown, recent projects are concentrated geographically, state portfolios differ, and the sampled pipeline is dominated by two variable technologies. Each finding points toward the same practical constraint: electricity must be coordinated across both space and time.
+
+The deeper conclusion is that Australia's next unit of transition value will increasingly come from connecting assets rather than counting them. A well-placed transmission upgrade, storage project or flexible load can make existing renewable capacity more useful; a poorly coordinated project can add nameplate capacity without adding the same amount of dependable supply.
+
+Australia has a national energy transition, but it will be won region by region and connection by connection.
+
+## Evidence and provenance
+
+This article combines a long-run national generation series with a facility-level sample of recent wind and solar accreditations. The facility data is useful for spatial and technology patterns but is not a complete register of Australian generators or storage assets.
 
 - [Full Elite analysis notebook](https://github.com/accidentalscientist/elite-analytics-articles-2026/blob/main/notebooks/02_mapping_australias_energy_transition.ipynb)
 - [Original power-station mapping notebook](https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day11/aus_energy_part1.ipynb)

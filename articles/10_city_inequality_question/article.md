@@ -1,42 +1,74 @@
-National inequality figures are useful, but they can obscure the cities where economic difference is actually lived. Housing, transport, employment, public space and access to services all land in particular metropolitan areas, not in a national average. City-level evidence can bring that local reality into view. It can also reveal a less comfortable fact: the places best measured are not necessarily the places where inequality matters most.
+National inequality averages can be accurate and still miss where inequality is lived. Housing, transport, employment, education and access to public space are organised through cities and regions. Metropolitan evidence brings that experience closer to view—but only where the underlying places are measured consistently enough to compare.
 
-## Coverage is part of the evidence
+This article therefore makes two arguments at once. City-level data is essential because national stability can conceal local difference. The available international city data is also uneven enough that coverage must be treated as evidence, not as a footnote beneath the “real” result.
 
-The first chart isn't about inequality itself. It's about the data available to study it. Some countries have many city-year observations; others have very few. That shapes what researchers, policy-makers and citizens can actually see: a data gap isn't merely a technical inconvenience, it can become a policy gap when urban change isn't measured consistently enough to be recognised.
+## The visible world is shaped by who gets measured
 
-## Cities need their own evidence base
+The opening figure counts city-year observations by country. Colombia and Kazakhstan dominate the available records, followed by a steep decline into countries with much thinner coverage. A country with more observations can appear more variable simply because more of its cities and years are visible.
+
+This creates a policy asymmetry. Places with strong statistical systems generate the evidence needed to diagnose problems and evaluate interventions. Places with sparse data can disappear from comparative work regardless of how urgent their urban inequality may be.
+
+## Repeated measurement is concentrated in a small set of places
 
 [[image1]]
 
-*Figure 1. City-level monitoring is uneven: some metropolitan areas have repeated observations, while many are represented only once or twice.*
+*Figure 2. City-level monitoring depth is uneven, with a limited group of cities observed repeatedly and many represented only a few times.*
 
-The monitoring pattern tells us where comparison is strongest, and it turns out to be a very narrow place. Of every country in the dataset, only four have even one city with complete eight-year Gini coverage: Colombia, with 23 such cities, Kazakhstan with 16, Honduras with 3, and Singapore with 1. Between them, Colombia and Kazakhstan account for 39 of the 43 cities worldwide with genuinely full temporal depth: 91% of the entire "gold standard" sample concentrated in two countries. Robust trend analysis, in practice, is only possible for a narrow and distinctly non-representative slice of the planet.
+The city-level coverage chart shows that national observation counts can also be misleading. Robust trend analysis requires the same place to be measured repeatedly. In this dataset, only 43 cities have the full eight years of observations, and 39 of those are in Colombia or Kazakhstan. Two countries therefore supply roughly 91% of the deepest longitudinal sample.
 
-This matters for the policies that shape city life. Housing affordability, public transport, labour markets and access to green space all interact with inequality at metropolitan scale, but only in the handful of places where anyone is actually tracking it consistently enough to notice.
+That concentration does not make their data less valuable. It makes broad global generalisation less defensible. A trend estimated from well-observed Colombian and Kazakh places cannot stand in for cities that appear once or not at all.
 
-## What counts as a "city" is doing a lot of quiet work
-
-The coverage problem isn't just about how often a place is measured: it's also about what's being measured under the same label. Look closely at the underlying entries and "city" turns out to be a loose category: West Kazakhstan and East Kazakhstan, both oblasts rather than cities, sit in the dataset alongside genuine metropolitan areas like Luanda and Sincelejo. Guilford (a county in North Carolina, not a city at all) appears with its own Gini value. That's not a minor labelling quirk. It means any claim to strict city-to-city comparability needs a caveat this dataset doesn't supply on its own.
-
-## National stability can hide local difference
+## The latest observed levels span radically different realities
 
 [[image2]]
 
-*Figure 2. Median metropolitan Gini values and city-level ranges reveal different inequality patterns within the countries covered by the source data.*
+*Figure 3. The lowest and highest latest available city observations reveal a wide inequality range across the 2010–2017 source window.*
 
-The trend view is deliberately cautious. It doesn't claim a handful of cities represent an entire country. Instead it shows why national figures should be read alongside metropolitan evidence: cities within the same country can experience very different levels and trajectories of inequality, and, per the coverage numbers above, most countries currently offer no way to check.
+The extremes give the coverage question substantive meaning. The lowest latest values in the dataset are concentrated in Kazakhstan, including Mangistau at 0.165. At the other end, Sana'a records 0.680, while Johannesburg and Tshwane reach 0.670 in their latest available observations.
 
-That's the city inequality question, sharpened: where is prosperity shared, where is it concentrated, and how much of the answer are we actually able to see?
+These are not a contemporaneous global league table: the latest year differs by place, and the labels mix cities with regions and administrative units. They are evidence of scale. Urban inequality in the observed dataset ranges from comparatively compressed distributions to profoundly unequal ones, and national averages cannot convey that span.
 
-## Better city data makes better policy possible
+## Countries contain different urban distributions
 
-Urban inequality isn't an abstract social indicator. It affects whether people can reach jobs, heat and cool their homes, participate in public life and benefit from economic growth. Better, more consistent metropolitan data won't solve those problems by itself; with 91% of full-depth coverage sitting in two countries, and "city" itself an inconsistently applied label, it does make the problems harder to ignore and easier to target where the data actually allows it.
+[[image3]]
 
-## Method
+*Figure 4. Data-rich countries occupy different inequality bands and show different amounts of variation across their observed city-years.*
 
-Uses the urban Gini data available in the source analysis to compare coverage, monitoring intensity, geographic labelling consistency and median inequality patterns over time. City samples are uneven across countries and years and shouldn't be treated as a complete national inequality measure.
+The boxplots compare countries with at least 20 observations. Kazakhstan sits at the lower end of the observed Gini distribution; Colombia and Honduras sit much higher; the United States and Vietnam occupy intermediate positions with their own spreads. Within-country variation is visible as well as the separation between national medians.
 
-## Full analysis and original source
+This is the strongest argument for metropolitan evidence. A national statistic describes the centre of a country; city data describes the range of places around it. Housing markets, industrial structure, migration and public services can make two cities under the same national policy regime experience inequality very differently.
+
+## Time adds direction, but only where coverage permits it
+
+[[image4]]
+
+*Figure 5. Median Gini trajectories for the best-covered countries are shown with the range across their observed cities.*
+
+The time series introduces movement without pretending every line is equally reliable. Colombia remains high but trends modestly downward across the observed period, while Kazakhstan remains substantially lower. The shaded ranges show that cities inside the same country do not move as one unit.
+
+The limited and uneven years are part of the interpretation. A smooth line over eight observations is not equivalent to continuous monitoring, and a two-year fragment should not be described as a long-run trend. The chart is strongest where it makes both the central tendency and the uncertainty created by city variation visible.
+
+## Inequality is also a measurement system
+
+[[image5]]
+
+*Figure 6. A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument.*
+
+The synthesis begins with an uncomfortable fact: the cities easiest to compare are the cities measured most often. Coverage, repeated observation, extreme values, within-country distributions and time trends all depend on that uneven evidence base. A clean global ranking can therefore express data availability as much as lived inequality.
+
+The correct response is not to abandon comparison, but to preserve the uncertainty around it. Cross-sectional differences identify places worth investigating, while repeated local series are better suited to judging direction and policy change. Better urban decisions require both better outcomes and a more representative measurement system.
+
+## Better urban evidence changes what policy can see
+
+Across the five views, coverage and outcome cannot be separated. Country counts show who is represented. City monitoring shows where trend analysis is possible. The extremes show the substantive range of inequality. Country distributions reveal local heterogeneity. The time series shows how patterns move where repeat observation exists.
+
+City data is not a smaller version of national data. It answers different questions: where opportunity is concentrated, which metropolitan areas diverge from national norms and whether local policies change the trajectory. But those answers are only as credible as the consistency of place definitions and measurement.
+
+The coherent argument is simple: national averages need a metropolitan lens, and the metropolitan lens needs a serious coverage audit. Better city policy begins by seeing both the inequality and the blind spots around it.
+
+## Evidence and provenance
+
+The source contains 726 usable city-year Gini observations from 2010–2017. Samples are highly uneven across countries and years, and the “City/region” field includes some oblasts, counties and other non-city units. The supplementary extremes and country-distribution figures are derived from the same source dataset. Results should not be treated as a complete global or national inequality ranking.
 
 - [Full Elite analysis notebook](https://github.com/accidentalscientist/elite-analytics-articles-2026/blob/main/notebooks/10_city_inequality_question.ipynb)
 - [Original Urban Inequality Dynamics notebook](https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week02/world_development_part2.ipynb)

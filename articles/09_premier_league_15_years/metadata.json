@@ -1,11 +1,10 @@
 {
   "title": "Fifteen Years of the Premier League: What Sustained Success Looks Like",
   "slug": "premier-league-15-years",
-  "date": "2026-04-06",
   "category": "sport",
-  "featured": true,
-  "summary": "A long-run Premier League study moving from clean historical data to fair comparisons, performance efficiency and predictive modelling.",
-  "key_takeaway": "Sustained football success is not explained by league tables alone: fair per-game comparisons, balanced performance and controlled aggression reveal a richer picture.",
+  "featured": false,
+  "summary": "Fifteen seasons of Premier League data connect institutional persistence with fair comparison, attack–defence efficiency and the limits of simple discipline models.",
+  "key_takeaway": "Dominance is balanced performance sustained over time: strong clubs score, control defensive downside and resist explanations built on one peripheral statistic.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week03/premier_league_15years_part1.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week03/premier_league_15years_part2.ipynb",
@@ -19,12 +18,24 @@
   "cover_image": "figures/part1_02.png",
   "inline_figures": [
     {
-      "file": "figures/part5_02.png",
-      "caption": "The strongest Premier League teams combine attacking output with defensive control, converting that balance into points per game."
+      "file": "figures/part4_02.png",
+      "caption": "League-position points across fifteen seasons show a steep elite tier and a long tail of shorter or less successful top-flight records."
     },
     {
-      "file": "figures/part7_03.png",
-      "caption": "Winner discipline varies by season, so yellow cards are a feature to interpret in context rather than a simple explanation for success."
+      "file": "figures/part5_02.png",
+      "caption": "The efficiency map plots goals scored against goals conceded per game, with bubble size representing points per game."
+    },
+    {
+      "file": "figures/part6_04.png",
+      "caption": "The correlation matrix shows how wins, goal difference, attacking production and defensive control relate to points per game."
+    },
+    {
+      "file": "figures/part7_04.png",
+      "caption": "Champions' yellow-card trend and the league average vary across eras rather than revealing one stable discipline formula."
+    },
+    {
+      "file": "figures/99-synthesis-board.png",
+      "caption": "A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument."
     }
   ]
 }

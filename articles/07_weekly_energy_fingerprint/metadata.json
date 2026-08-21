@@ -1,11 +1,10 @@
 {
   "title": "The Weekly Energy Fingerprint: What Household Demand Tells Us About the Grid",
   "slug": "weekly-energy-fingerprint",
-  "date": "2026-02-02",
   "category": "energy",
   "featured": false,
-  "summary": "Household electricity data reveals how daily routines create predictable load patterns and why flexible demand belongs in the transition toolkit.",
-  "key_takeaway": "Electricity demand is behavioural as well as technical; understanding its weekly rhythm helps a renewable grid use clean supply more effectively.",
+  "summary": "A household power record reveals recurring demand patterns across years, days, hours and circuits—and where useful flexibility may live.",
+  "key_takeaway": "Electricity demand is behavioural infrastructure: measuring its rhythm allows flexible loads to help balance a cleaner grid.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day29/household_power.ipynb",
     "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day30/household_power_part2.ipynb"
@@ -14,12 +13,24 @@
   "cover_image": "figures/03_power_by_day_of_week.png",
   "inline_figures": [
     {
+      "file": "figures/01_daily_average_power.png",
+      "caption": "Daily average active power across the multi-year record shows recurring cycles, exceptional peaks and a changing baseline."
+    },
+    {
+      "file": "figures/02_long_run_household_patterns.png",
+      "caption": "Long-run total demand, sub-metered circuits and the average hourly profile reveal different layers of the same household load."
+    },
+    {
       "file": "figures/04_weekday_vs_weekend.png",
-      "caption": "Weekdays and weekends follow different hourly demand patterns in the source household data."
+      "caption": "Average hourly profiles show a sharper weekday morning ramp and a higher, differently timed weekend evening peak."
     },
     {
       "file": "figures/05_weekly_energy_heatmap.png",
-      "caption": "The hour-by-day heatmap reveals a distinctive weekly demand fingerprint, including recurring morning and evening peaks."
+      "caption": "The hour-by-day heatmap locates recurring morning and evening demand peaks across the week."
+    },
+    {
+      "file": "figures/99-synthesis-board.png",
+      "caption": "A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument."
     }
   ]
 }

@@ -1,11 +1,10 @@
 {
   "title": "Australia's Grid Transition: What 25 Years of NEM Data Reveals",
   "slug": "australias-grid-transition",
-  "date": "2025-08-04",
   "category": "energy",
-  "featured": true,
-  "summary": "A long-run view of Australia's electricity transition, connecting generation, emissions intensity, market value and seasonal system behaviour.",
-  "key_takeaway": "Australia's transition is visible in the data: coal is declining while wind and solar become material contributors, making storage, transmission and flexible demand central to the next phase.",
+  "featured": false,
+  "summary": "Twenty-five years of NEM data show that Australia's transition is changing generation, timing, carbon intensity and price formation at different speeds.",
+  "key_takeaway": "Renewable growth has changed the generation mix; the decisive next step is coordinating transmission, storage, flexible demand and market design around it.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day06/nem_data_part1.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day07/nem_data_part2.ipynb"
@@ -15,11 +14,23 @@
   "inline_figures": [
     {
       "file": "figures/04_analysis_output.png",
-      "caption": "Monthly generation patterns vary by technology, making storage, transmission and flexible demand essential system tools."
+      "caption": "Monthly distributions reveal different seasonal signatures for coal, wind, hydro, solar and other generation sources."
     },
     {
       "file": "figures/06_analysis_output.png",
-      "caption": "Carbon intensity differs sharply by generation technology, reinforcing why the composition of supply matters as much as total output."
+      "caption": "Carbon intensity differs sharply across generation sources, so a change in output is not equivalent to a change in emissions."
+    },
+    {
+      "file": "figures/07_analysis_output.png",
+      "caption": "Emissions and average market price have a weak, changing relationship across the record."
+    },
+    {
+      "file": "figures/02_analysis_output.png",
+      "caption": "Rolling growth rates show mature thermal generation changing slowly while newer renewable sources expand from a smaller base."
+    },
+    {
+      "file": "figures/99-synthesis-board.png",
+      "caption": "A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument."
     }
   ]
 }

@@ -1,11 +1,10 @@
 {
   "title": "Climate Risk, Emissions and Policy: From Rising Seas to National Transition Pathways",
   "slug": "climate-risk-emissions-policy",
-  "date": "2026-01-05",
   "category": "energy",
   "featured": false,
-  "summary": "A combined climate analysis connecting risk, sectoral priorities and national transition pathways.",
-  "key_takeaway": "Climate policy is strongest when it links visible risk to the sectors and national systems where emissions reductions can have the greatest leverage.",
+  "summary": "A layered climate-policy analysis connecting accumulating risk with country concentration, historical scale, sector leverage and national system shape.",
+  "key_takeaway": "Risk is shared, emissions leverage is concentrated, and transition pathways are specific; effective policy must hold all three facts at once.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day18/climate_change_part2.ipynb",
     "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day19/climate_change_part3.ipynb",
@@ -15,12 +14,24 @@
   "cover_image": "figures/04_sea_level_rise.png",
   "inline_figures": [
     {
+      "file": "figures/01_major_country_emissions_pathways.png",
+      "caption": "Major-country emissions pathways show China's rapid rise, the United States' high but declining trajectory and distinct paths among other large emitters."
+    },
+    {
+      "file": "figures/03_us_vs_oecd_emissions.png",
+      "caption": "United States emissions are comparable to the combined total of the other OECD members through much of the historical series."
+    },
+    {
       "file": "figures/05_global_emissions_by_sector.png",
-      "caption": "Power, industry and ground transport stand out as major global emissions levers in the source data."
+      "caption": "Power, industry and ground transport dominate global sector emissions in the source data."
     },
     {
       "file": "figures/09_country_sectoral_clusters.png",
-      "caption": "Sectoral profiles differ across countries, reinforcing that practical transition policy must be tailored to system structure."
+      "caption": "Country clusters based on sectoral emissions profiles separate system shapes that a headline total cannot."
+    },
+    {
+      "file": "figures/99-synthesis-board.png",
+      "caption": "A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument."
     }
   ]
 }

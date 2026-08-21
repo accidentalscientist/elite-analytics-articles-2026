@@ -1,11 +1,10 @@
 {
   "title": "Mapping Australia's Power System: Where the Transition Is Taking Shape",
   "slug": "mapping-australias-power-system",
-  "date": "2025-09-01",
   "category": "energy",
-  "featured": true,
-  "summary": "A spatial view of Australia's electricity transition, connecting national generation trends with the geography of renewable capacity.",
-  "key_takeaway": "Australia's transition is a physical build-out: generation resources, geography and grid connections shape whether renewable projects can contribute to a reliable low-emissions system.",
+  "featured": false,
+  "summary": "A spatial view of Australia's electricity transition, from national generation growth to the state, technology and network constraints beneath it.",
+  "key_takeaway": "Australia's next unit of transition value will increasingly come from connecting and coordinating renewable assets, not merely counting them.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day11/aus_energy_part1.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day01/intro_ausenergy.ipynb"
@@ -14,12 +13,24 @@
   "cover_image": "figures/07_national_renewables_trend.png",
   "inline_figures": [
     {
+      "file": "figures/06_total_generation_over_time.png",
+      "caption": "Total Australian electricity generation rises over the long run, so cleaner supply must replace existing output while serving a larger system."
+    },
+    {
       "file": "figures/02_installed_capacity_by_state.png",
-      "caption": "A facility-level renewable-capacity snapshot makes the geographic concentration of development visible."
+      "caption": "A recent-accreditation snapshot maps installed renewable capacity and makes the concentration of new development visible."
     },
     {
       "file": "figures/04_capacity_by_state_and_fuel.png",
-      "caption": "The solar and wind mix in the source dataset varies by state, reinforcing that a national transition must be planned region by region."
+      "caption": "Installed wind and solar capacity in the source sample varies sharply by state."
+    },
+    {
+      "file": "figures/05_national_capacity_by_fuel.png",
+      "caption": "Wind supplies about two-thirds and solar about one-third of capacity in the recent-accreditation sample."
+    },
+    {
+      "file": "figures/99-synthesis-board.png",
+      "caption": "A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument."
     }
   ]
 }

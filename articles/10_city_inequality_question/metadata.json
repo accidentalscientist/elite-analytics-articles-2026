@@ -1,11 +1,10 @@
 {
   "title": "The City Inequality Question: What Metropolitan Data Reveals",
   "slug": "city-inequality-question",
-  "date": "2026-05-04",
   "category": "data",
   "featured": false,
-  "summary": "A global analysis of metropolitan income inequality, data coverage and the value of city-level evidence.",
-  "key_takeaway": "National inequality figures can conceal the cities where economic difference is actually experienced; city-level data is essential for understanding where policy must land.",
+  "summary": "City-level inequality reveals local differences that national averages conceal, while a coverage audit shows how little of the urban world is measured consistently.",
+  "key_takeaway": "National averages need a metropolitan lens, and the metropolitan lens needs a serious coverage audit before it can support credible comparison.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week02/world_development_part2.ipynb"
   ],
@@ -14,11 +13,23 @@
   "inline_figures": [
     {
       "file": "figures/02_city_monitoring_coverage.png",
-      "caption": "Repeated observation is uneven across cities, defining where trend analysis is strongest."
+      "caption": "City-level monitoring depth is uneven, with a limited group observed repeatedly and many represented only a few times."
+    },
+    {
+      "file": "figures/04_city_gini_extremes.png",
+      "caption": "The lowest and highest latest available city observations reveal a wide inequality range across the 2010–2017 source window."
+    },
+    {
+      "file": "figures/05_city_gini_distribution_by_country.png",
+      "caption": "Data-rich countries occupy different inequality bands and show different amounts of variation across observed city-years."
     },
     {
       "file": "figures/03_median_gini_over_time.png",
-      "caption": "City-level inequality patterns differ across the countries and years covered by the source data."
+      "caption": "Median Gini trajectories for the best-covered countries are shown with the range across their observed cities."
+    },
+    {
+      "file": "figures/99-synthesis-board.png",
+      "caption": "A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument."
     }
   ]
 }

@@ -1,11 +1,10 @@
 {
   "title": "Who Is Really Leading the Green-Energy Transition?",
   "slug": "global-green-energy-transition",
-  "date": "2025-11-03",
   "category": "energy",
-  "featured": true,
-  "summary": "A global renewable-energy analysis that moves beyond league tables to identify distinct national transition trajectories.",
-  "key_takeaway": "The most useful comparison is not who produces the most renewable electricity today, but which countries are following credible, repeatable growth trajectories.",
+  "featured": false,
+  "summary": "Five measures of renewable leadership show why scale, capacity per person, system penetration and trajectory produce different—but complementary—leaders.",
+  "key_takeaway": "A useful green-energy comparison begins by matching the metric to the decision; no single ranking can capture scale, depth and momentum at once.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_july2025/blob/main/week03_day05/global_green_part1.ipynb"
   ],
@@ -13,12 +12,24 @@
   "cover_image": "figures/01_top_renewable_electricity_countries.png",
   "inline_figures": [
     {
+      "file": "figures/05_renewable_capacity_per_capita.png",
+      "caption": "Renewable generating capacity per person in 2020 brings smaller hydro-rich and fast-building systems into view."
+    },
+    {
+      "file": "figures/06_renewable_share_primary_energy.png",
+      "caption": "Renewables as a share of primary energy in 2020 measures system penetration rather than electricity volume alone."
+    },
+    {
       "file": "figures/03_country_renewable_trends.png",
-      "caption": "The leading countries follow distinct renewable-electricity paths, which is more informative than a single ranking."
+      "caption": "Country-by-year renewable electricity reveals distinct trajectories beneath the latest-year totals."
     },
     {
       "file": "figures/04_cluster_renewable_trajectories.png",
-      "caption": "Clustering the trajectories shifts the discussion from current rank to the shape and pace of transition."
+      "caption": "Clustering average renewable-electricity trajectories separates scale leaders, steady growers and lower-output pathways."
+    },
+    {
+      "file": "figures/99-synthesis-board.png",
+      "caption": "A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument."
     }
   ]
 }

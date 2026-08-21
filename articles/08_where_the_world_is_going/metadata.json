@@ -1,30 +1,40 @@
 {
   "title": "Where the World Is Going: Demography, Prosperity and Economic Resilience",
   "slug": "where-the-world-is-going",
-  "date": "2026-03-02",
   "category": "data",
-  "featured": true,
-  "summary": "A global systems view of demographic change, longevity, trade, macroeconomic health and overlooked economic leaders.",
-  "key_takeaway": "National opportunity is multi-dimensional: demographic conditions, trade performance, inflation, debt and regional relationships together tell a more useful story than GDP alone.",
+  "featured": false,
+  "summary": "Demography, health, trade and macroeconomic balance reveal national capacity that a GDP ranking cannot show on its own.",
+  "key_takeaway": "Future opportunity depends on converting human potential into durable resilience; the strongest evidence comes from combinations of indicators, not one champion metric.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part1.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part2.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part3.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part4.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part5.ipynb",
-    "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part6.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part7.ipynb"
   ],
   "analysis_notebook": "../../notebooks/08_where_the_world_is_going.ipynb",
   "cover_image": "figures/03_median_age_vs_life_expectancy.png",
   "inline_figures": [
     {
+      "file": "figures/06_child_mortality.png",
+      "caption": "Global child-mortality counts fall dramatically across the long run, with improvements visible across age groups."
+    },
+    {
+      "file": "figures/12_exports_comparison.png",
+      "caption": "Recent export paths highlight fast-growing economies that receive less attention than the largest global traders."
+    },
+    {
       "file": "figures/20_macro_health_quadrant.png",
-      "caption": "Growth is only one dimension of macroeconomic health; inflation, debt and external balance shape resilience too."
+      "caption": "The macro-health quadrant compares growth and inflation while using debt and current-account position to show additional constraints."
     },
     {
       "file": "figures/29_hidden_leaders_component_profile.png",
-      "caption": "A transparent component view prevents a composite score from becoming a black-box ranking."
+      "caption": "The component profile reveals which standardised indicators drive each country's integrated economic score."
+    },
+    {
+      "file": "figures/99-synthesis-board.png",
+      "caption": "A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument."
     }
   ]
 }

@@ -1,20 +1,20 @@
-> Three different season engines leave Arsenal and Man City separated by only 0.5%. The uncertainty is not a flaw in the analysis. It is the central finding.
+> Three different season engines leave Arsenal and Manchester City separated by only half a percentage point. That uncertainty is not a failure of the forecast; it is the most important thing the forecast knows.
 
-## The thesis
+A league table is the end of a season, not an honest description of one before it begins. Turning uncertain squads, new managers, injuries, European workload and 380 unplayed matches into a single expected-points column creates precision the evidence cannot support.
 
-The most misleading football forecast is the cleanest one: twenty clubs, one expected-points column, and no visible uncertainty. It turns small differences in inputs into a false claim that August already knows May.
+This analysis takes a different position. It builds a transparent player and club evidence layer, sends that evidence through three deliberately different season engines, and preserves the disagreement between them. Data science is most useful here when it measures several plausible routes through the season instead of pretending August already knows May.
 
-Our approach starts from the opposite proposition: **a league forecast should expose its disagreements**. We first build a player and club evidence layer. We then ask three genuinely different season engines to interpret it. Model 1 assumes structural quality persists. Model 2 says stadium, manager, transfers and European workload change the path. Model 3 learns nonlinear match relationships and lets form update after every simulated game.
+## Building the evidence layer
 
-> **The thesis:** The question is not “who finishes first in the spreadsheet?” It is “which routes to the title remain plausible, and which assumptions create them?”
+The forecast begins with people rather than club badges. The player score combines EA FC overall ratings, position-adjusted Fantasy Premier League prices and five-season FPL production. It is imperfect—game ratings and fantasy prices are opinions encoded as numbers—but it gives current squad quality a separate voice from last season's table.
 
 [[image1]]
 
-*Figure 1. Arsenal, Manchester City and Liverpool dominate the merit places. Amber segments show where the three-per-club rule changes the published list.*
+*Figure 1. The Premier League 100 by club, separating merit places from additions required by the three-player club floor.*
 
-## The Premier League 100
+The distribution is deliberately top-heavy. Arsenal, Manchester City and Liverpool place many players on merit because the source measures see more elite quality in those squads. That concentration is information: title contenders generally need both exceptional peaks and enough depth to survive rotation, injury and fixture congestion.
 
-The score is 65% EA FC overall percentile, 20% position-adjusted FPL price percentile and 15% five-season, position-adjusted FPL production. Each club's top three is protected before the remaining places are filled by league-wide score. Raw rank is unconstrained; route labels the club-floor additions.
+The amber club-floor additions are equally important because they prevent the model from mistaking incomplete coverage for an absence of talent. Every club contributes at least three players before remaining places are awarded league-wide. The safeguard does not make squads equal; it ensures that promoted and less fashionable clubs enter the evidence layer rather than disappearing from it.
 
 | Rank | Player | Club | Pos | EA | FPL £m | 5y pts/90 | Score | Raw rank | Route |
 |---:|---|---|:---:|---:|---:|---:|---:|---:|---|
@@ -119,41 +119,63 @@ The score is 65% EA FC overall percentile, 20% position-adjusted FPL price perce
 | 99 | Jack Butland | Hull City | GKP | 75 | 4.5 | 3.53 | 33.8 | 289 | Club floor |
 | 100 | Matt Grimes | Coventry City | MID | 74 | 5.0 | — | 30.1 | 315 | Club floor |
 
-## History and squad strength
+The list should be read as a model input, not an eternal verdict on the league's best hundred footballers. Its value is consistency and coverage. The raw rank remains visible so readers can see exactly where the club-floor rule changes the published list.
+
+Its shape also matters more than a debate over one borderline selection. The table gives the simulation a consistent measure of elite concentration and squad depth while keeping the adjustments visible enough to challenge or replace later.
+
+## Separating recent history from current squad strength
 
 [[image2]]
 
-*Figure 2. Five-season history and current squad strength agree at the top, but several clubs sit far from the diagonal—the space where model disagreement begins.*
+*Figure 2. Five-season history against current squad strength; bubble size shows top-100 representation and colour shows contextual uncertainty.*
 
-## Model 1: structural mixture plus K
+History and squad quality agree at the very top, but the distance from the diagonal is where the forecast becomes interesting. A club above its historical position may have recruited faster than results have caught up. A club below it may still carry a strong recent record while its current squad, manager or availability picture has weakened.
+
+The five-season window also prevents one extraordinary or disastrous campaign from becoming the whole prior. Recent seasons receive more weight, but older evidence keeps the model from declaring a permanent new order after a single year. Current players can then move that baseline rather than merely repeat it.
+
+## Establishing a structural baseline
 
 [[image3]]
 
-*Figure 3. Model 1's complete structural forecast. Points are shown as a mean and 10–90% interval; title probability is printed at the right.*
+*Figure 3. Model 1's complete structural forecast, including expected points, 10–90% intervals and title probability.*
+
+Model 1 is the base case: a mixture of weighted five-season history and current squad quality, translated into match strength and simulated over a full schedule. The mean points tell us where the structural evidence centres each club; the interval is the more honest output because it shows how many very different seasons remain compatible with the same inputs.
+
+This model favours Arsenal and Manchester City because both the historical and player layers place them at the front. It is intentionally conservative. It assumes strength persists unless the simulation's season-level randomiser, K, or match outcomes provide enough evidence to move it.
+
+## Turning certainty into an explicit choice
 
 [[image4]]
 
-*Figure 4. K is a persistent season-level uncertainty control. Increasing it does not change the evidence; it changes how confidently the engine translates evidence into a title claim.*
+*Figure 4. Title probability under low, base and high K, showing how season-level uncertainty changes apparent confidence.*
 
-## Models 2 and 3: adaptation versus feedback
+K is not a secret adjustment used to produce a preferred champion. It is a sensitivity control for everything a structural model cannot know in August: whether finishing runs hot or cold, whether a tactical change works immediately, and whether a run of close games breaks in one direction. Increasing K widens the range of possible seasons without rewriting the underlying evidence.
 
-Model 2 refuses to hide every unknown inside one K. It decomposes the season into club-specific stadium strength, zero-centred new-coach effects, transfer churn, promotion uncertainty, European workload and match-level availability. Its argument is that context does not affect every club equally. A new coach can be an improvement or a disruption; European competition creates fatigue in some weeks rather than subtracting an arbitrary number of points from August.
+The chart shows why a title percentage should never appear without an uncertainty philosophy. Low K converts a small quality edge into strong confidence. Higher K allows more challengers and more reversals. The base setting is therefore a declared judgement about how volatile one Premier League season can be, not a discovered law of football.
 
-Model 3 takes a different route. A regularised gradient-boosted classifier learns nonlinear relationships from five chronological seasons of pre-match Elo, rolling points, goal difference, venue form, rest and season progress. Elo and form update after every simulated fixture, while heavy-tailed regime shocks permit the rare breakout or collapse seasons that Gaussian forecasts routinely suppress. On the 2025/26 holdout, its multiclass log loss is 1.058 against 1.082 for an unconditional baseline. That is useful improvement, not permission to call the algorithm an oracle.
+## Letting context and feedback disagree
 
-The case for Model 2 is that 2026/27 contains enough manager, squad and workload change for adaptation to matter. The case for Model 3 is that early results create feedback: form, confidence and changing match probabilities alter the path after August. Their disagreement with Model 1 is a feature, because each can be wrong for a different reason.
+Model 2 decomposes uncertainty into club-specific mechanisms: stadium strength, a zero-centred new-coach effect, transfer churn, promotion uncertainty, European workload and match-level availability. Its premise is that disruption is uneven. A new manager can improve one club and delay another; European competition creates fatigue in particular weeks rather than subtracting an arbitrary number of points in August.
 
-## Where the models disagree
+Model 3 uses a regularised gradient-boosted classifier trained on five chronological seasons of pre-match Elo, rolling points, goal difference, venue form, rest and season progress. Elo and form update after each simulated fixture, while heavy-tailed regime shocks allow rare breakout or collapse seasons. Its 2025/26 holdout log loss of 1.058 beats the unconditional 1.082 baseline modestly—useful evidence, but nowhere near a licence to call the algorithm an oracle.
 
 [[image5]]
 
-*Figure 5. Each club's three model estimates, connected by their full spread. The black diamond is the declared consensus and the right label is the final expected-points rank.*
+*Figure 5. Each club's three expected-points estimates, connected by their full spread; the diamond is the weighted consensus.*
 
-## Three models, one final probability distribution
+The connected ranges reveal whether apparent certainty comes from shared evidence or shared assumptions. Arsenal and Manchester City remain strong in every engine, but several clubs—particularly those facing managerial change, squad turnover or promotion—move materially depending on whether structure, context or feedback receives the greater voice.
+
+That variation is precisely why the models are kept separate. Averaging three near-identical formulas would only disguise one opinion as an ensemble. Here Model 1 can be wrong because history persisted less than expected, Model 2 because contextual effects were mis-signed, and Model 3 because learned relationships failed to transfer. Different failure modes make the comparison useful.
+
+## Combining the season distributions
 
 [[image6]]
 
-*Figure 6. Three engines, one probability distribution. Agreement is strongest on the leading group; the exact Arsenal–Manchester City order remains model-dependent.*
+*Figure 6. Title probabilities from the structural, contextual and machine-learning engines alongside the weighted consensus.*
+
+The leading conclusion is not that Arsenal are certain champions. It is that Arsenal and Manchester City occupy effectively the same title tier: 37.2% and 36.7% in the weighted view, with Liverpool retaining a meaningful 17.9% route. A half-point difference is ranking convenience, not substantive separation.
+
+Below the leaders, the probabilities communicate asymmetry better than expected rank alone. Some clubs have similar central points but different chances of reaching the top four or falling into relegation because their simulated distributions have different widths and tails. The distribution contains the forecast; the mean is only its centre.
 
 | Rank | Club | M1 pts | M1 title | M2 pts | M2 title | M3 pts | M3 title | Final pts | Final title | Top four | Relegated |
 |---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -178,17 +200,31 @@ The case for Model 2 is that 2026/27 contains enough manager, squad and workload
 | 19 | Coventry City | 34.1 | 0.0% | 35.7 | 0.0% | 43.4 | 0.1% | 37.1 | 0.0% | 0.7% | 47.2% |
 | 20 | Hull City | 29.6 | 0.0% | 28.2 | 0.0% | 32.4 | 0.0% | 29.8 | 0.0% | 0.0% | 77.7% |
 
-## Complete evidence board
+The central ranks are close enough that a small change in form or availability can reorder several clubs without changing the broad structure of the forecast. Expected position should therefore be read as a midpoint, not a fixed destination.
+
+The tail probabilities add the information the rank removes. They distinguish a stable mid-table profile from a similarly ranked club whose simulations include both European contention and a meaningful relegation risk.
+
+## Seeing the whole argument at readable scale
 
 [[image7]]
 
-*Figure 7. The complete evidence board: player representation, historical and squad evidence, uncertainty, all three simulations, their theses and the final weighted call.*
+*Figure 7. A large-format evidence board connecting player representation, squad and historical strength, structural uncertainty, model disagreement and the final title distribution.*
 
-## The verdict
+The vertical board is designed to keep each chart legible at normal article width. Read from top to bottom, it shows the chain of inference rather than presenting a collage: who supplies the squad signal, how that signal compares with history, what the structural model does with it, where the engines disagree and how the final probabilities are formed.
 
-**Arsenal, by the smallest defensible margin.** The weighted view gives Arsenal 37.2%, Man City 36.7% and Liverpool 17.9%. The model's job is not to remove that ambiguity. Its job is to measure it.
+The advantage of the combined view is diagnostic. If the conclusion feels too bullish for a club, the reader can identify the source of that confidence. Arsenal and City's advantage enters through both history and squad strength, survives the K sensitivity test and appears in all three engines. The model is confident that they belong to the leading tier, but not confident about which of them finishes first.
 
-## Full analysis and original sources
+## What I would predict
+
+My narrow call is Arsenal, but the defensible prediction is a two-club title tier rather than a single ordained winner. Arsenal's weighted 37.2% is only 0.5 percentage points above Manchester City's 36.7%; that gap is far smaller than the uncertainty in squad availability, tactical adaptation or a few close matches. Liverpool are the clear third route and the club most capable of turning a two-team expectation into a three-team race.
+
+The deeper finding is that the models agree more on hierarchy than on exact outcomes. They consistently identify the same leading group, yet differ on the size of the gaps and on several volatile clubs underneath it. That is where new coaches, European schedules and feedback from early results matter most. Tottenham, Chelsea, Manchester United and the promoted teams should be treated as distributions with unusually consequential tails, not as fixed positions.
+
+This also explains why an apparently modest ensemble is preferable to a spectacularly certain algorithm. Football seasons contain regime changes that historical data cannot observe in advance. A model should reward strong evidence while leaving room for those breaks. The purpose of the three-engine design is not to eliminate judgement, but to put the judgement where readers can inspect it.
+
+The best preseason forecast is not the one that produces the neatest table. It is the one that shows which assumptions create the table, how often other tables occur, and what new evidence would make us change our minds. On that standard, Arsenal are the smallest possible favourite, Manchester City are essentially level, Liverpool remain live, and the uncertainty is the result.
+
+## Methods and original sources
 
 - [Full Elite analysis notebook](https://github.com/accidentalscientist/elite-analytics-articles-2026/blob/main/notebooks/13_premier_league_2026_27_forecast.ipynb)
 

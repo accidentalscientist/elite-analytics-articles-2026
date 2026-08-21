@@ -1,42 +1,74 @@
-Climate risk becomes real when it's visible. Sea-level records make one consequence of warming tangible; emissions data points to the systems where action has leverage. Put together, they turn a broad climate problem into a practical transition question, and the key is resisting the urge to treat every country and every sector as though it faces the same one.
+Climate policy becomes practical when three questions are connected: what risk is accumulating, who shapes the emissions trajectory, and which parts of each economy offer the greatest leverage. Separate those questions and policy becomes either abstract warning or generic prescription. Put them together and priorities become visible.
 
-## Risk has a measurable trend
+The five figures move from consequence to responsibility to system design. Sea level makes risk measurable. Country pathways show emissions concentration. The United States–OECD comparison adds historical context. Sector totals identify the major levers. Country clusters show why those levers must be combined differently from one economy to another.
 
-The sea-level record doesn't move in a straight line month to month. Weather, seasons and measurement noise all matter. But the long-run trajectory rises through the record, making the underlying risk visible even as short-term variation continues. That's a useful starting point for policy: consequences here aren't abstract, and they accumulate over time whether or not anyone's watching closely.
+## Risk accumulates beneath short-term variation
 
-## Emissions reduction has clear leverage points
+The opening sea-level record rises across more than a century even though individual months and years move around the trend. Weather, ocean circulation and measurement variation create noise; the rolling mean and fitted line reveal the persistent direction beneath it.
+
+Sea level is a useful policy signal because its consequences are local and cumulative. Infrastructure, insurance, housing and coastal ecosystems respond to the level reached over decades, not to whether one month sits above or below trend. Delayed action therefore compounds exposure.
+
+## A small number of countries shape the global path
 
 [[image1]]
 
-*Figure 1. Global emissions are concentrated in a small number of sectors, with power, industry and ground transport standing out as major transition priorities.*
+*Figure 2. Major-country emissions pathways show China's rapid rise, the United States' high but declining trajectory and distinct paths among other large emitters.*
 
-The sector breakdown isn't a complete policy prescription, but it's a useful map. Clean power supports electrification. Industrial transformation needs new processes and fuels. Transport requires a mix of vehicle technology, networks and better choices about how people and goods move. There's no single intervention, but there are clearly different, specific levers, and confusing them wastes effort.
+The country series reveals concentration and divergence. China and the United States were much closer in the early 2000s than they are near the end of the record; China's total rises to more than double the US level. India grows from a lower base, while Russia and other large economies follow different histories.
 
-## Two countries carry most of the story
+This does not turn climate policy into a two-country problem. It does show that global outcomes are unusually sensitive to decisions inside a few very large systems. International coordination has to be broad, but it cannot pretend leverage is evenly distributed.
 
-The country-level emissions data adds a sharper edge to this than a sector chart alone can. China and the United States were roughly at parity in the early 2000s. They aren't anymore: China's emissions are now more than double the US total, a gap that opened up inside two decades, not a slow historical drift. And the US comparison doesn't stop there: on its own, the United States has historically emitted roughly as much as every other OECD member combined. Not the largest OECD contributor: comparable to the entire rest of the bloc, added together.
-
-Those two facts change what "shared responsibility" actually looks like in practice. A sectoral emissions map says where the levers are. These numbers say which countries are holding most of them.
-
-## National pathways are different by design
+## Historical scale changes the OECD comparison
 
 [[image2]]
 
-*Figure 2. Countries group differently by sectoral emissions profile, suggesting that useful transition comparisons should be based on system shape, not only total emissions.*
+*Figure 3. United States emissions are comparable to the combined total of the other OECD members through much of the historical series.*
 
-Country clusters make this point visually. Large power-sector emitters don't face the same transition as transport-heavy or industry-heavy economies. Countries with similar sectoral profiles may have more to learn from each other than countries that merely have similar headline emissions totals; that's a more constructive basis for cooperation: shared technology needs, financing constraints and sector-specific policy lessons, rather than a shared spot on a league table.
+The OECD comparison adds a different form of concentration. The United States is not merely the bloc's largest individual contributor; for much of the record its emissions approach those of the rest of the OECD combined. Both lines eventually decline, but they do so from an enormous accumulated base.
 
-## From evidence to policy
+The figure matters because present totals and historical responsibility answer different policy questions. Current emissions shape the future rate of warming; historical emissions shape the stock already accumulated. Fair policy needs to acknowledge both without allowing either to become an excuse for inaction.
 
-The central question isn't who's to blame. It's where action has the greatest leverage, and the country-level concentration in China and the US means leverage isn't spread evenly either. Clean electricity, electrification, industrial change and targeted support each matter, but in very different combinations depending on which system, and which country, is actually being discussed.
+## Emissions have identifiable sectoral centres of gravity
 
-Good climate policy starts with that specificity. It turns risk into a mandate for action, and emissions data into a guide for where (and with whom) to begin.
+[[image3]]
 
-## Method
+*Figure 4. Power, industry and ground transport dominate global sector emissions in the source data.*
 
-Combines exploratory analyses of country emissions pathways, global sea-level measurements and sectoral emissions profiles. Useful for broad patterns, not a causal attribution study or a complete greenhouse-gas inventory; country clusters are descriptive, not a ranking of responsibility.
+The sector ranking converts a global total into intervention points. Clean power can directly reduce electricity emissions and enable electrification elsewhere. Industry requires efficiency, material substitution, new processes and low-carbon heat. Ground transport combines vehicle technology with urban form, public transport and freight systems.
 
-## Full analysis and original sources
+There is no single policy lever, but there is a clear hierarchy of where large reductions must come from. Treating every sector equally can be as misleading as treating every country equally.
+
+## Similar totals can conceal different systems
+
+[[image4]]
+
+*Figure 5. Country clusters based on sectoral emissions profiles separate system shapes that a headline total cannot.*
+
+The cluster view asks which countries face structurally similar transitions. China and the United States appear as outliers in the reduced-dimensional view, while many European and middle-sized economies group more closely. The purpose is not to label winners and losers. It is to identify where policy and technology lessons may travel.
+
+A power-heavy economy needs a different sequencing from a transport-heavy one. Industrial exporters face different constraints from service economies. Countries with similar profiles may have more to learn from one another than countries with similar total emissions but different underlying sources.
+
+## From physical risk to policy leverage
+
+[[image5]]
+
+*Figure 6. A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument.*
+
+Together, the figures connect a slowly accumulating physical hazard with a highly concentrated emissions system. Sea level records establish the direction of risk, while country and sector views identify where mitigation decisions can have the greatest effect. The comparison also shows why equal-looking national totals can require very different interventions.
+
+The policy implication is a combination of concentration and tailoring. Global progress depends disproportionately on a small group of major emitters, but their sector structures, historical paths and development needs differ. Effective strategy focuses effort where emissions are largest while designing the instrument around the system that produced them.
+
+## Climate strategy is concentrated and tailored at the same time
+
+The evidence produces an apparent tension that policy has to hold. Global leverage is concentrated in a few countries and sectors, yet implementation must be tailored to national system structure. The solution is neither a universal checklist nor a collection of unrelated local plans.
+
+The evidence supports a layered strategy: use visible risk to sustain urgency, focus international effort on the largest present and historical contributors, prioritise power, industry and transport, then adapt those levers to each country's emissions profile and institutional capacity.
+
+Risk is shared, leverage is unequal and pathways are specific. Effective policy begins by accepting all three facts at once.
+
+## Evidence and provenance
+
+This article combines exploratory country emissions, global sea-level and sectoral emissions analyses. The clusters are descriptive and depend on the selected variables; they are not causal models, complete greenhouse-gas inventories or rankings of national virtue.
 
 - [Full Elite analysis notebook](https://github.com/accidentalscientist/elite-analytics-articles-2026/blob/main/notebooks/06_climate_risk_emissions_policy.ipynb)
 - [Country emissions pathways](https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day18/climate_change_part2.ipynb)

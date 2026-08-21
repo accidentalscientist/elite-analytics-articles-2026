@@ -1,11 +1,10 @@
 {
   "title": "Climate Evidence: From Australia's Power System to Global Temperature Records",
   "slug": "climate-evidence-energy-response",
-  "date": "2025-12-01",
   "category": "energy",
   "featured": false,
-  "summary": "Australian electricity, surface-temperature, satellite and atmospheric records form one evidence chain for why the energy transition matters.",
-  "key_takeaway": "The strength of climate evidence lies in independent measurement systems arriving at compatible conclusions across different time scales.",
+  "summary": "Surface temperature, satellite observations, atmospheric CO₂ and the electricity mix form a chain from measured climate change to practical response.",
+  "key_takeaway": "Independent records converge on a warming climate under rising greenhouse-gas concentrations, while the energy system provides a measurable lever for response.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week00/climate_change_proof_part5.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week00/climate_change_proof_part6.ipynb",
@@ -16,12 +15,24 @@
   "cover_image": "figures/04_global_surface_temperature_anomalies.png",
   "inline_figures": [
     {
+      "file": "figures/06_temperature_anomaly_acceleration.png",
+      "caption": "A curved fit to the global surface-temperature anomaly record highlights acceleration rather than a constant linear drift."
+    },
+    {
+      "file": "figures/08_satellite_temperature_trend.png",
+      "caption": "AIRS satellite temperature anomalies from 2002–2025 show a positive fitted trend despite substantial year-to-year variation."
+    },
+    {
       "file": "figures/11_cape_grim_co2_concentration.png",
-      "caption": "Cape Grim measurements make the long-run atmospheric CO₂ rise visible while preserving the normal seasonal cycle."
+      "caption": "Cape Grim measurements show carbon-dioxide concentration rising across decades while the normal annual seasonal cycle continues."
     },
     {
       "file": "figures/02_nsw_fuel_mix.png",
-      "caption": "The NSW fuel mix shows why the energy transition is a system-design challenge, not only a capacity-building challenge."
+      "caption": "The NSW fuel mix shows renewable supply growing inside an electricity system that still depends heavily on thermal generation."
+    },
+    {
+      "file": "figures/99-synthesis-board.png",
+      "caption": "A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument."
     }
   ]
 }

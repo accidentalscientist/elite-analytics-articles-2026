@@ -1,11 +1,10 @@
 {
   "title": "Australia's Energy Balance: Consumption, Supply and the Petroleum Challenge",
   "slug": "australias-energy-balance",
-  "date": "2025-10-06",
   "category": "energy",
   "featured": false,
-  "summary": "A whole-of-system view of Australian energy, connecting generation, sectoral consumption, state variation and petroleum dependence.",
-  "key_takeaway": "Electricity is central to decarbonisation, but a credible Australian transition must also confront the broader energy balance: especially petroleum use and the sectors that depend on it.",
+  "summary": "A whole-of-economy view of Australian energy connecting the electricity mix with state pathways, industry demand and petroleum exposure.",
+  "key_takeaway": "Cleaner electricity is the foundation of Australia's transition, but the transition becomes economy-wide only when it changes the fuels used in transport, industry and other end uses.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day01/intro_ausenergy.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day02/aus_energy_part2.ipynb",
@@ -17,12 +16,24 @@
   "cover_image": "figures/05_energy_mix_components.png",
   "inline_figures": [
     {
+      "file": "figures/09_transition_clusters.png",
+      "caption": "States cluster into sharply different transition pathways when renewable share and coal change are considered together."
+    },
+    {
       "file": "figures/10_energy_use_by_industry.png",
-      "caption": "Sectoral energy use follows different paths, so the transition needs more than a single technology solution."
+      "caption": "Net energy use by industry follows different trajectories, including a pronounced transport disruption around 2020."
+    },
+    {
+      "file": "figures/14_petroleum_supply.png",
+      "caption": "Australian petroleum production and supply categories follow distinct long-run paths."
     },
     {
       "file": "figures/15_petroleum_products.png",
-      "caption": "Petroleum products remain a central part of Australia's energy system, especially for transport-linked services."
+      "caption": "Fuel-price series translate petroleum dependence into direct exposure for households and firms."
+    },
+    {
+      "file": "figures/99-synthesis-board.png",
+      "caption": "A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument."
     }
   ]
 }
