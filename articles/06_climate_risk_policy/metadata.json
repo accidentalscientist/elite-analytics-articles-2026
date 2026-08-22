@@ -5,7 +5,7 @@
   "category": "energy",
   "featured": false,
   "summary": "A layered climate-policy analysis connecting accumulating risk with country concentration, historical scale, sector leverage and national system shape.",
-  "key_takeaway": "Risk is shared, emissions leverage is concentrated, and transition pathways are specific; effective policy must hold all three facts at once.",
+  "key_takeaway": "Risk is shared across the world, but emissions leverage is concentrated in a handful of countries and sectors, and the pathway out looks different for each one of them. Effective climate policy has to hold all three facts at once, sustaining urgency from shared risk while focusing effort where the emissions actually are. The US-OECD comparison is the single chart that turns this from a moral argument into an arithmetic one.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day18/climate_change_part2.ipynb",
     "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day19/climate_change_part3.ipynb",

@@ -5,7 +5,7 @@
   "category": "energy",
   "featured": false,
   "summary": "A whole-of-economy view of Australian energy connecting the electricity mix with state pathways, industry demand and petroleum exposure.",
-  "key_takeaway": "Cleaner electricity is the foundation of Australia's transition, but the transition becomes economy-wide only when it changes the fuels used in transport, industry and other end uses.",
+  "key_takeaway": "Cleaner electricity is the foundation of Australia's transition, not its completion. State pathways, industrial energy use and petroleum dependence show that a successful power-sector policy does not automatically become an economy-wide one. The transition becomes real only when cleaner generation starts changing the fuels used in transport, industry and everything else that doesn't yet run on the grid.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day01/intro_ausenergy.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day02/aus_energy_part2.ipynb",

@@ -5,7 +5,7 @@
   "category": "data",
   "featured": false,
   "summary": "City-level inequality reveals local differences that national averages conceal, while a coverage audit shows how little of the urban world is measured consistently.",
-  "key_takeaway": "National averages need a metropolitan lens, and the metropolitan lens needs a serious coverage audit before it can support credible comparison.",
+  "key_takeaway": "National averages need a metropolitan lens: two cities under the same national policy can experience genuinely different levels of inequality. But the metropolitan lens itself needs a serious coverage audit, since just two countries supply 91% of the deepest longitudinal sample, before it can support credible comparison. Better city policy begins by seeing the inequality and the blind spots in the measurement at the same time.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week02/world_development_part2.ipynb"
   ],

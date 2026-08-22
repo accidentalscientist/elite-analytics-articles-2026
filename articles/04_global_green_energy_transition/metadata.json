@@ -4,8 +4,8 @@
   "date": "2025-11-03",
   "category": "energy",
   "featured": false,
-  "summary": "Five measures of renewable leadership show why scale, capacity per person, system penetration and trajectory produce different—but complementary—leaders.",
-  "key_takeaway": "A useful green-energy comparison begins by matching the metric to the decision; no single ranking can capture scale, depth and momentum at once.",
+  "summary": "Five measures of renewable leadership show why scale, capacity per person, system penetration and trajectory produce different, complementary leaders.",
+  "key_takeaway": "A useful green-energy comparison begins by matching the metric to the decision, since no single ranking can capture scale, depth and momentum at once. China leads on scale, Bhutan on capacity per person, Iceland on system penetration, and the trajectory view rewards consistency over any single year's headline. The best transition is not the one that wins a scoreboard; it's the one whose progress is durable enough for other countries to actually learn from.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_july2025/blob/main/week03_day05/global_green_part1.ipynb"
   ],

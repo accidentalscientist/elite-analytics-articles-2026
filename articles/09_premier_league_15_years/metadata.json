@@ -5,7 +5,7 @@
   "category": "sport",
   "featured": false,
   "summary": "Fifteen seasons of Premier League data connect institutional persistence with fair comparison, attack–defence efficiency and the limits of simple discipline models.",
-  "key_takeaway": "Dominance is balanced performance sustained over time: strong clubs score, control defensive downside and resist explanations built on one peripheral statistic.",
+  "key_takeaway": "Dominance is balanced performance sustained over time: the clubs that stay on top score heavily, control their defensive downside and keep rebuilding that balance through changing squads and managers. It resists the tidy explanations built on one peripheral statistic, including a discipline formula that this analysis deliberately tested and found no real signal for. Sustained success is a system, not a signature stat.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week03/premier_league_15years_part1.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week03/premier_league_15years_part2.ipynb",

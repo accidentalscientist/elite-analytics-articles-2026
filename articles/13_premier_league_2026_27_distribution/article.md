@@ -1,231 +1,284 @@
-> Three different season engines leave Arsenal and Manchester City separated by only half a percentage point. That uncertainty is not a failure of the forecast; it is the most important thing the forecast knows.
+> A forecast is most useful where it refuses to collapse uncertainty. Three independently constructed engines put Manchester City first in the consensus, but their distances for individual clubs reveal where the evidence is stable and where it is conditional.
 
-A league table is the end of a season, not an honest description of one before it begins. Turning uncertain squads, new managers, injuries, European workload and 380 unplayed matches into a single expected-points column creates precision the evidence cannot support.
+A league table is the end of a season, not an honest description of one before it begins. Turning changing squads, new managers, European workload and 380 unplayed matches into a single points column creates precision the evidence cannot support. The snapshot is 22 August 2026; everything that follows is a model of what was knowable then, not a claim to know May in advance.
 
-This analysis takes a different position. It builds a transparent player and club evidence layer, sends that evidence through three deliberately different season engines, and preserves the disagreement between them. Data science is most useful here when it measures several plausible routes through the season instead of pretending August already knows May.
+Persistent club quality, summer disruption and match-by-match momentum each tell a different story about the season. The **Foundations Engine** asks what happens if established quality dominates. The **Disruption Engine** gives transfers, coaches, promotion, Europe and data uncertainty room to move a season. The **Momentum Engine** learns match probabilities from rolling form and Elo-like state. Each simulates the complete 380-match schedule **10,000 times**. The consensus is a weighted mixture of those simulations, not a fourth model.
 
-## Building the evidence layer
+## Four views of player value
 
-The forecast begins with people rather than club badges. The player score combines EA FC overall ratings, position-adjusted Fantasy Premier League prices and five-season FPL production. It is imperfect—game ratings and fantasy prices are opinions encoded as numbers—but it gives current squad quality a separate voice from last season's table.
+The player layer now has four equally weighted, position-normalised components: the current official EA overall rating; Transfermarkt's estimated market value in euros; a recency-weighted five-season Fantasy Premier League points-per-90 measure; and FotMob's 2025/26 match rating. FPL price has been removed. Transfermarkt contributes a market estimate rather than a fantasy-game budget, while FotMob adds a performance-derived rating independent of EA's game-rating process. Equal 25% weights prevent one source's scale from dominating merely because it is measured in millions, points or rating units.
+
+Names are reconciled to the current FPL player registry using normalised exact matching followed by conservative fuzzy matching. The direct-observation counts are 519 of 600 for EA, 524 for Transfermarkt, 474 for five-year production and 237 for FotMob. FotMob's lower coverage is expected because its published leaderboard applies a participation threshold. Missing values are never left blank: EA, points-per-90 and FotMob gaps receive the arithmetic mean for the player's position; Transfermarkt first uses the position-by-age-band mean, then falls back to position and league means. Every imputed table value is marked with a dagger, and the imputation share is carried into club-level uncertainty rather than silently treated as observed truth.
 
 [[image1]]
 
-*Figure 1. The Premier League 100 by club, separating merit places from additions required by the three-player club floor.*
+*Figure 1. The raw top 100 is preserved in rank order, after which 15 players are added to give every club at least three representatives.*
 
-The distribution is deliberately top-heavy. Arsenal, Manchester City and Liverpool place many players on merit because the source measures see more elite quality in those squads. That concentration is information: title contenders generally need both exceptional peaks and enough depth to survive rotation, injury and fixture congestion.
+This is a constrained selection problem, not a re-ranking. The algorithm first freezes the 100 highest composite scores league-wide, counts club membership, and then appends each under-represented club's best unselected players until its count reaches three. The stacked bars distinguish selection by raw score from selection through the coverage constraint; the dashed line marks the floor rather than a performance target. Opacity keeps the two routes visible where the bars overlap.
 
-The amber club-floor additions are equally important because they prevent the model from mistaking incomplete coverage for an absence of talent. Every club contributes at least three players before remaining places are awarded league-wide. The safeguard does not make squads equal; it ensures that promoted and less fashionable clubs enter the evidence layer rather than disappearing from it.
+The resulting list contains 115 players. Manchester City, Arsenal and Chelsea remain dominant because the raw evidence puts many of their players in the first hundred. The floor does not dilute that signal or take places away from them; it adds enough information for Ipswich Town, Hull City, Coventry City and the other thinly represented clubs to have a usable squad core.
 
-| Rank | Player | Club | Pos | EA | FPL £m | 5y pts/90 | Score | Raw rank | Route |
+That ordering matters. In the earlier construction, floor places were interleaved into a table labelled as a top 100, which made raw rank and publication rank answer different questions. Here the first hundred rows are genuinely the raw top 100. The rows after them are explicitly labelled “Three-club floor”, retain their original raw rank and make the modelling safeguard auditable.
+
+| Raw rank | Player | Club | Pos | EA | Transfermarkt €m | 5y pts/90 | FotMob | Score | Route |
 |---:|---|---|:---:|---:|---:|---:|---:|---:|---|
-| 1 | Gabriel dos Santos Magalhães | Arsenal | DEF | 88 | 8.0 | 5.01 | 97.9 | 1 | Merit |
-| 2 | Bukayo Saka | Arsenal | MID | 88 | 9.5 | 6.31 | 97.7 | 2 | Merit |
-| 3 | Erling Haaland | Man City | FWD | 90 | 15.5 | 7.25 | 97.7 | 3 | Merit |
-| 4 | David Raya Martín | Arsenal | GKP | 87 | 6.0 | 4.15 | 97.2 | 4 | Merit |
-| 5 | Cole Palmer | Chelsea | MID | 87 | 9.5 | 6.40 | 97.0 | 5 | Merit |
-| 6 | Bruno Borges Fernandes | Man Utd | MID | 87 | 12.0 | 5.47 | 96.0 | 6 | Merit |
-| 7 | Gianluigi Donnarumma | Man City | GKP | 89 | 5.5 | 3.97 | 95.9 | 7 | Merit |
-| 8 | Alexander Isak | Liverpool | FWD | 88 | 9.0 | 6.53 | 95.4 | 8 | Merit |
-| 9 | Virgil van Dijk | Liverpool | DEF | 90 | 6.5 | 4.16 | 94.7 | 9 | Merit |
-| 10 | Phil Foden | Man City | MID | 85 | 7.0 | 6.21 | 93.6 | 10 | Merit |
-| 11 | Florian Wirtz | Liverpool | MID | 89 | 7.5 | 4.74 | 93.5 | 11 | Merit |
-| 12 | Bryan Mbeumo | Man Utd | MID | 85 | 8.0 | 5.33 | 92.8 | 12 | Merit |
-| 13 | William Saliba | Arsenal | DEF | 87 | 6.0 | 4.31 | 92.4 | 13 | Merit |
-| 14 | Martin Ødegaard | Arsenal | MID | 87 | 6.5 | 5.09 | 91.8 | 14 | Merit |
-| 15 | James Maddison | Spurs | MID | 84 | 6.5 | 5.74 | 90.9 | 15 | Merit |
-| 16 | Cody Gakpo | Liverpool | MID | 84 | 7.0 | 5.16 | 90.2 | 16 | Merit |
-| 17 | Matheus Santos Carneiro da Cunha | Man Utd | MID | 83 | 8.0 | 5.33 | 89.8 | 17 | Merit |
-| 18 | Declan Rice | Arsenal | MID | 87 | 7.5 | 4.28 | 89.1 | 18 | Merit |
-| 19 | Jordan Pickford | Everton | GKP | 84 | 5.5 | 3.75 | 88.7 | 19 | Merit |
-| 20 | Rodrigo 'Rodri' Hernandez Cascante | Man City | MID | 90 | 6.5 | 4.15 | 88.6 | 20 | Merit |
-| 21 | Tijjani Reijnders | Man City | MID | 86 | 6.0 | 5.10 | 88.6 | 21 | Merit |
-| 22 | Eberechi Eze | Arsenal | MID | 83 | 6.5 | 5.42 | 88.0 | 22 | Merit |
-| 23 | Jeremie Frimpong | Liverpool | DEF | 83 | 5.5 | 5.49 | 88.0 | 23 | Merit |
-| 24 | Omar Marmoush | Man City | FWD | 84 | 7.0 | 6.30 | 88.0 | 24 | Merit |
-| 25 | Jurriën Timber | Arsenal | DEF | 82 | 6.5 | 4.87 | 87.6 | 25 | Merit |
-| 26 | Ollie Watkins | Aston Villa | FWD | 84 | 8.0 | 5.62 | 87.2 | 26 | Merit |
-| 27 | Joško Gvardiol | Man City | DEF | 84 | 5.5 | 4.59 | 87.2 | 27 | Merit |
-| 28 | Rúben dos Santos Gato Alves Dias | Man City | DEF | 86 | 5.5 | 3.99 | 86.7 | 28 | Merit |
-| 29 | Hugo Ekitiké | Liverpool | FWD | 83 | 7.5 | 6.26 | 86.5 | 29 | Merit |
-| 30 | Mikel Merino Zazón | Arsenal | MID | 83 | 6.0 | 5.53 | 86.3 | 30 | Merit |
-| 31 | Viktor Gyökeres | Arsenal | FWD | 87 | 7.5 | 5.20 | 86.2 | 31 | Merit |
-| 32 | Dominik Szoboszlai | Liverpool | MID | 83 | 7.0 | 4.63 | 86.1 | 32 | Merit |
-| 33 | Benjamin White | Arsenal | DEF | 83 | 5.5 | 4.69 | 85.7 | 33 | Merit |
-| 34 | Rayan Cherki | Man City | MID | 81 | 7.5 | 6.86 | 85.7 | 34 | Merit |
-| 35 | Morgan Gibbs-White | Nott'm Forest | MID | 82 | 8.0 | 4.77 | 84.7 | 35 | Merit |
-| 36 | Piero Hincapié | Arsenal | DEF | 83 | 5.5 | 4.38 | 84.5 | 36 | Merit |
-| 37 | Sávio Moreira de Oliveira | Man City | MID | 82 | 6.5 | 5.18 | 84.4 | 37 | Merit |
-| 38 | Dejan Kulusevski | Spurs | MID | 83 | 6.5 | 4.52 | 84.1 | 38 | Merit |
-| 39 | Morgan Rogers | Chelsea | MID | 82 | 7.5 | 4.66 | 83.9 | 39 | Merit |
-| 40 | Enzo Fernández | Chelsea | MID | 84 | 7.0 | 3.94 | 83.5 | 40 | Merit |
-| 41 | Emiliano Martínez Romero | Aston Villa | GKP | 85 | 5.0 | 3.54 | 83.1 | 41 | Merit |
-| 42 | Alysson Edward Franco da Rocha dos Santos | Aston Villa | MID | 89 | 5.0 | 5.74 | 82.7 | 42 | Merit |
-| 43 | Gabriel Martinelli Silva | Arsenal | MID | 81 | 6.5 | 5.35 | 82.0 | 43 | Merit |
-| 44 | Marc Guéhi | Man City | DEF | 82 | 6.0 | 3.75 | 81.5 | 44 | Merit |
-| 45 | Xavi Simons | Spurs | MID | 84 | 6.0 | 4.12 | 81.1 | 45 | Merit |
-| 46 | Reece James | Chelsea | DEF | 81 | 5.5 | 4.88 | 81.1 | 46 | Merit |
-| 47 | Jérémy Doku | Man City | MID | 80 | 7.5 | 5.70 | 80.7 | 47 | Merit |
-| 48 | Ronald Araujo | Liverpool | DEF | 83 | 5.5 | — | 80.5 | 48 | Merit |
-| 49 | Giorgi Mamardashvili | Liverpool | GKP | 84 | 5.0 | 3.53 | 80.3 | 49 | Merit |
-| 50 | Jacob Murphy | Newcastle | MID | 81 | 6.0 | 5.42 | 80.0 | 50 | Merit |
-| 51 | Youri Tielemans | Man Utd | MID | 85 | 6.0 | 3.64 | 79.9 | 51 | Merit |
-| 52 | Marcus Rashford | Man Utd | MID | 80 | 7.0 | 5.45 | 79.7 | 52 | Merit |
-| 53 | Nikola Milenković | Nott'm Forest | DEF | 83 | 5.5 | 3.51 | 79.7 | 53 | Merit |
-| 54 | Ryan Gravenberch | Liverpool | MID | 85 | 6.0 | 3.54 | 79.5 | 54 | Merit |
-| 55 | Antoine Semenyo | Man City | MID | 80 | 8.5 | 5.11 | 79.4 | 55 | Merit |
-| 56 | Alexis Mac Allister | Liverpool | MID | 87 | 5.5 | 3.97 | 79.2 | 56 | Merit |
-| 57 | Pedro Porro Sauceda | Spurs | DEF | 82 | 5.5 | 3.78 | 78.6 | 57 | Merit |
-| 58 | Daniel Muñoz Mejía | Crystal Palace | DEF | 81 | 5.5 | 4.34 | 78.5 | 58 | Merit |
-| 59 | Noni Madueke | Arsenal | MID | 80 | 6.5 | 5.42 | 78.3 | 59 | Merit |
-| 60 | Federico Chiesa | Liverpool | MID | 81 | 5.5 | 9.57 | 78.0 | 60 | Merit |
-| 61 | Kai Havertz | Arsenal | FWD | 82 | 7.5 | 5.07 | 77.8 | 61 | Merit |
-| 62 | Matz Sels | Nott'm Forest | GKP | 83 | 5.0 | 3.51 | 77.3 | 62 | Merit |
-| 63 | Jean-Philippe Mateta | Crystal Palace | FWD | 82 | 6.5 | 5.25 | 77.1 | 63 | Merit |
-| 64 | Harvey Barnes | Newcastle | MID | 80 | 6.0 | 5.59 | 76.4 | 64 | Merit |
-| 65 | Granit Xhaka | Sunderland | MID | 85 | 5.5 | 3.84 | 76.4 | 65 | Merit |
-| 66 | Anthony Elanga | Newcastle | MID | 81 | 6.0 | 4.59 | 76.3 | 66 | Merit |
-| 67 | Yoane Wissa | Newcastle | FWD | 82 | 6.0 | 5.48 | 76.3 | 67 | Merit |
-| 68 | Nick Pope | Newcastle | GKP | 81 | 5.0 | 3.78 | 76.1 | 68 | Merit |
-| 69 | Rayan Aït-Nouri | Man City | DEF | 81 | 5.5 | 3.81 | 75.8 | 69 | Merit |
-| 70 | Murillo Costa dos Santos | Nott'm Forest | DEF | 83 | 5.5 | 3.11 | 75.2 | 70 | Merit |
-| 71 | Chris Wood | Nott'm Forest | FWD | 82 | 6.0 | 5.40 | 75.0 | 71 | Merit |
-| 72 | Dean Henderson | Crystal Palace | GKP | 81 | 5.0 | 3.53 | 73.5 | 78 | Merit |
-| 73 | James Tarkowski | Everton | DEF | 80 | 6.0 | 3.47 | 72.9 | 81 | Merit |
-| 74 | Nordi Mukiele | Sunderland | DEF | 79 | 5.5 | 4.88 | 70.7 | 86 | Merit |
-| 75 | Anton Stach | Leeds | MID | 79 | 6.0 | 5.20 | 69.0 | 91 | Merit |
-| 76 | Justin Kluivert | Bournemouth | MID | 79 | 6.0 | 5.17 | 68.9 | 93 | Merit |
-| 77 | Caoimhín Kelleher | Brentford | GKP | 79 | 5.0 | 3.89 | 67.3 | 99 | Merit |
-| 78 | Mikkel Damsgaard | Brentford | MID | 80 | 5.5 | 4.39 | 66.9 | 101 | Club floor |
-| 79 | Pascal Groß | Brighton | MID | 80 | 5.5 | 4.33 | 66.7 | 103 | Club floor |
-| 80 | Brennan Johnson | Everton | MID | 79 | 6.0 | 4.51 | 65.6 | 107 | Club floor |
-| 81 | Alex Iwobi | Fulham | MID | 80 | 5.5 | 3.98 | 64.5 | 112 | Club floor |
-| 82 | Francisco Evanilson de Lima Barbosa | Bournemouth | FWD | 80 | 6.0 | 4.27 | 62.5 | 121 | Club floor |
-| 83 | Kevin Schade | Brentford | MID | 78 | 6.0 | 4.92 | 62.5 | 122 | Club floor |
-| 84 | Daizen Maeda | Ipswich Town | MID | 79 | 5.5 | — | 60.5 | 130 | Club floor |
-| 85 | Lucas Estella Perri | Leeds | GKP | 81 | 4.5 | 2.69 | 60.4 | 131 | Club floor |
-| 86 | Rayan Vitor Simplício Rocha | Bournemouth | MID | — | 6.5 | 5.43 | 59.7 | 136 | Club floor |
-| 87 | Matt O'Riley | Brighton | MID | 78 | 5.5 | 5.32 | 59.3 | 137 | Club floor |
-| 88 | Antonee Robinson | Fulham | DEF | 82 | 4.5 | 3.09 | 58.7 | 140 | Club floor |
-| 89 | Carlos Baleba | Brighton | MID | 81 | 5.0 | 2.87 | 57.6 | 146 | Club floor |
-| 90 | Bernd Leno | Fulham | GKP | 80 | 4.5 | 3.33 | 57.0 | 151 | Club floor |
-| 91 | Harry Wilson | Leeds | MID | 76 | 6.5 | 5.66 | 56.8 | 153 | Club floor |
-| 92 | Florentino Ibrain Morris Luís | Ipswich Town | MID | 80 | 5.0 | 3.60 | 56.1 | 159 | Club floor |
-| 93 | Omar Alderete | Sunderland | DEF | 78 | 5.0 | 4.02 | 54.2 | 170 | Club floor |
-| 94 | Hidemasa Morita | Hull City | MID | 79 | 5.0 | — | 54.0 | 173 | Club floor |
-| 95 | Konstantinos Tzolakis | Hull City | GKP | 79 | 4.5 | — | 53.9 | 175 | Club floor |
-| 96 | Gustavo Hamer | Coventry City | MID | 77 | 5.5 | 3.34 | 44.3 | 226 | Club floor |
-| 97 | Abdul Fatawu | Ipswich Town | MID | 76 | 5.5 | 4.06 | 42.6 | 235 | Club floor |
-| 98 | Taiwo Awoniyi | Coventry City | FWD | 75 | 5.5 | 6.72 | 41.8 | 241 | Club floor |
-| 99 | Jack Butland | Hull City | GKP | 75 | 4.5 | 3.53 | 33.8 | 289 | Club floor |
-| 100 | Matt Grimes | Coventry City | MID | 74 | 5.0 | — | 30.1 | 315 | Club floor |
+| 1 | Bukayo Saka | Arsenal | MID | 87 | 110.0 | 6.31 | 7.52 | 96.9 | Raw top 100 |
+| 2 | Rayan Cherki | Man City | MID | 86 | 90.0 | 6.86 | 7.35 | 96.0 | Raw top 100 |
+| 3 | Jérémy Doku | Man City | MID | 84 | 75.0 | 5.70 | 7.33 | 92.3 | Raw top 100 |
+| 4 | Phil Foden | Man City | MID | 84 | 70.0 | 6.21 | 7.32 | 92.3 | Raw top 100 |
+| 5 | Cole Palmer | Chelsea | MID | 85 | 100.0 | 6.40 | 7.04 | 92.1 | Raw top 100 |
+| 6 | Gabriel dos Santos Magalhães | Arsenal | DEF | 89 | 75.0 | 5.01 | 7.32 | 92.0 | Raw top 100 |
+| 7 | Erling Haaland | Man City | FWD | 91 | 220.0 | 7.25 | 7.68 | 90.6 | Raw top 100 |
+| 8 | Nico O'Reilly | Man City | DEF | 83 | 70.0 | 5.43 | 7.17 | 90.0 | Raw top 100 |
+| 9 | Jurriën Timber | Arsenal | DEF | 84 | 70.0 | 4.87 | 7.26 | 90.0 | Raw top 100 |
+| 10 | Reece James | Chelsea | DEF | 84 | 60.0 | 4.88 | 7.23 | 89.8 | Raw top 100 |
+| 11 | William Saliba | Arsenal | DEF | 88 | 100.0 | 4.31 | 7.16 | 88.3 | Raw top 100 |
+| 12 | Gianluigi Donnarumma | Man City | GK | 89 | 45.0 | 3.97 | 7.25 | 88.1 | Raw top 100 |
+| 13 | Riccardo Calafiori | Arsenal | DEF | 82 | 55.0 | 5.07 | 7.15 | 87.2 | Raw top 100 |
+| 14 | Antoine Semenyo | Man City | MID | 85 | 80.0 | 5.11 | 7.34 | 87.2 | Raw top 100 |
+| 15 | David Raya Martín | Arsenal | GK | 88 | 30.0 | 4.15 | 7.21 | 86.8 | Raw top 100 |
+| 16 | Matheus Santos Carneiro da Cunha | Man Utd | MID | 84 | 75.0 | 5.33 | 7.29 | 86.5 | Raw top 100 |
+| 17 | Marc Guéhi | Man City | DEF | 85 | 70.0 | 3.75 | 7.37 | 86.4 | Raw top 100 |
+| 18 | Dominik Szoboszlai | Liverpool | MID | 86 | 100.0 | 4.63 | 7.50 | 86.1 | Raw top 100 |
+| 19 | Bruno Borges Fernandes | Man Utd | MID | 89 | 35.0 | 5.47 | 8.03 | 86.1 | Raw top 100 |
+| 20 | Matheus Nunes | Man City | DEF | 83 | 50.0 | 4.21 | 7.45 | 86.0 | Raw top 100 |
+| 21 | Rúben dos Santos Gato Alves Dias | Man City | DEF | 87 | 55.0 | 3.99 | 7.18 | 86.0 | Raw top 100 |
+| 22 | Bryan Mbeumo | Man Utd | MID | 84 | 75.0 | 5.33 | 7.19 | 85.3 | Raw top 100 |
+| 23 | Hugo Ekitiké | Liverpool | FWD | 85 | 80.0 | 6.26 | 7.08 | 84.9 | Raw top 100 |
+| 24 | Declan Rice | Arsenal | MID | 88 | 120.0 | 4.28 | 7.56 | 84.5 | Raw top 100 |
+| 25 | Piero Hincapié | Arsenal | DEF | 84 | 50.0 | 4.38 | 7.07 | 84.5 | Raw top 100 |
+| 26 | Florian Wirtz | Liverpool | MID | 86 | 100.0 | 4.74 | 7.16 | 84.4 | Raw top 100 |
+| 27 | Martin Ødegaard | Arsenal | MID | 86 | 70.0 | 5.09 | 7.00 | 83.0 | Raw top 100 |
+| 28 | Elliot Anderson | Man City | MID | 84 | 110.0 | 4.34 | 7.51 | 82.9 | Raw top 100 |
+| 29 | Eberechi Eze | Arsenal | MID | 84 | 65.0 | 5.42 | 6.97 | 82.2 | Raw top 100 |
+| 30 | Cody Gakpo | Liverpool | MID | 82 | 60.0 | 5.16 | 7.17 | 82.1 | Raw top 100 |
+| 31 | Pedro Porro Sauceda | Spurs | DEF | 83 | 45.0 | 3.78 | 7.14 | 81.6 | Raw top 100 |
+| 32 | Abdukodir Khusanov | Man City | DEF | 82 | 50.0 | 3.83 | 7.12 | 81.4 | Raw top 100 |
+| 33 | Morgan Rogers | Chelsea | MID | 84 | 110.0 | 4.66 | 7.00 | 81.3 | Raw top 100 |
+| 34 | Morgan Gibbs-White | Nott'm Forest | MID | 83 | 70.0 | 4.77 | 7.15 | 80.8 | Raw top 100 |
+| 35 | Maxence Lacroix | Chelsea | DEF | 82 | 50.0 | 3.94 | 7.04 | 80.7 | Raw top 100 |
+| 36 | João Pedro Junqueira de Jesus | Chelsea | FWD | 83 | 80.0 | 5.41 | 7.18 | 80.6 | Raw top 100 |
+| 37 | Benjamin Sesko | Man Utd | FWD | 82 | 75.0 | 6.13 | 6.80 | 80.2 | Raw top 100 |
+| 38 | Enzo Fernández | Chelsea | MID | 86 | 100.0 | 3.94 | 7.30 | 79.8 | Raw top 100 |
+| 39 | Senne Lammens | Man Utd | GK | 82 | 35.0 | 3.41 | 7.11 | 79.7 | Raw top 100 |
+| 40 | Luka Vušković | Brighton | DEF | 81 | 60.0 | 5.68† | 6.96† | 79.2 | Raw top 100 |
+| 41 | Harry Wilson | Leeds | MID | 81 | 25.0 | 5.66 | 7.14 | 78.3 | Raw top 100 |
+| 42 | Dean Henderson | Crystal Palace | GK | 82 | 28.0 | 3.53 | 7.01 | 78.0 | Raw top 100 |
+| 43 | Adrien Truffert | Bournemouth | DEF | 80 | 30.0 | 4.40 | 7.18 | 78.0 | Raw top 100 |
+| 44 | Lewis Hall | Newcastle | DEF | 83 | 40.0 | 3.70 | 6.99 | 77.8 | Raw top 100 |
+| 45 | Malick Thiaw | Newcastle | DEF | 81 | 45.0 | 3.83 | 7.03 | 77.6 | Raw top 100 |
+| 46 | Joško Gvardiol | Man City | DEF | 85 | 70.0 | 4.59 | 6.96† | 77.5 | Raw top 100 |
+| 47 | Viktor Gyökeres | Arsenal | FWD | 86 | 65.0 | 5.20 | 6.82 | 77.3 | Raw top 100 |
+| 48 | Martín Zubimendi Ibáñez | Arsenal | MID | 84 | 75.0 | 4.00 | 7.20 | 77.2 | Raw top 100 |
+| 49 | Marcos Senesi Barón | Spurs | DEF | 82 | 25.0 | 3.93 | 7.19 | 76.6 | Raw top 100 |
+| 50 | Alexander Isak | Liverpool | FWD | 86 | 85.0 | 6.53 | 6.68† | 76.6 | Raw top 100 |
+| 51 | Iliman Ndiaye | Everton | MID | 82 | 55.0 | 4.18 | 7.22 | 76.3 | Raw top 100 |
+| 52 | Ryan Gravenberch | Liverpool | MID | 85 | 80.0 | 3.54 | 7.25 | 76.0 | Raw top 100 |
+| 53 | Sven Botman | Newcastle | DEF | 81 | 35.0 | 3.91 | 7.00 | 75.7 | Raw top 100 |
+| 54 | Robert Lynch Sánchez | Chelsea | GK | 80 | 22.0 | 3.59 | 7.07 | 75.6 | Raw top 100 |
+| 55 | Anton Stach | Leeds | MID | 80 | 28.0 | 5.20 | 7.31 | 75.4 | Raw top 100 |
+| 56 | Daniel Muñoz Mejía | Crystal Palace | DEF | 82 | 22.0 | 4.34 | 7.15 | 74.8 | Raw top 100 |
+| 57 | Yankuba Minteh | Brighton | MID | 80 | 45.0 | 4.64 | 7.07 | 74.6 | Raw top 100 |
+| 58 | Pedro Lomba Neto | Chelsea | MID | 81 | 60.0 | 4.31 | 7.04 | 74.4 | Raw top 100 |
+| 59 | Jan Paul van Hecke | Spurs | DEF | 81 | 60.0 | 3.21 | 7.10 | 74.1 | Raw top 100 |
+| 60 | Emiliano Martínez Romero | Aston Villa | GK | 85 | 12.0 | 3.54 | 7.07 | 73.7 | Raw top 100 |
+| 61 | Johan Manzambi | Aston Villa | MID | 80 | 65.0 | 5.60† | 6.94† | 73.5 | Raw top 100 |
+| 62 | Amad Diallo | Man Utd | MID | 79 | 45.0 | 4.61 | 7.19 | 73.4 | Raw top 100 |
+| 63 | Kiernan Dewsbury-Hall | Everton | MID | 81 | 35.0 | 4.41 | 7.17 | 73.1 | Raw top 100 |
+| 64 | Alex Scott | Bournemouth | MID | 81 | 50.0 | 4.02 | 7.17 | 73.0 | Raw top 100 |
+| 65 | Tijjani Reijnders | Man City | MID | 84 | 27.0† | 5.10 | 6.95 | 73.0 | Raw top 100 |
+| 66 | Mamadou Sangaré | Brentford | MID | 81 | 40.0 | 5.60† | 6.94† | 72.9 | Raw top 100 |
+| 67 | Virgil van Dijk | Liverpool | DEF | 88 | 15.0 | 4.16 | 7.26 | 72.8 | Raw top 100 |
+| 68 | Mohammed Kudus | Spurs | MID | 81 | 50.0 | 4.28 | 6.99 | 72.8 | Raw top 100 |
+| 69 | Jeremie Frimpong | Liverpool | DEF | 81 | 35.0 | 5.49 | 6.96† | 72.7 | Raw top 100 |
+| 70 | Mike Penders | Chelsea | GK | 78 | 25.0 | 6.04† | 6.96† | 71.6 | Raw top 100 |
+| 71 | Marcus Rashford | Man Utd | MID | 82 | 40.0 | 5.45 | 6.94† | 71.5 | Raw top 100 |
+| 72 | Sandro Tonali | Spurs | MID | 85 | 80.0 | 3.23 | 7.04 | 71.5 | Raw top 100 |
+| 73 | Moisés Caicedo Corozo | Chelsea | MID | 86 | 100.0 | 2.87 | 7.10 | 71.5 | Raw top 100 |
+| 74 | Ollie Watkins | Aston Villa | FWD | 83 | 25.0 | 5.62 | 6.97 | 71.4 | Raw top 100 |
+| 75 | Youri Tielemans | Man Utd | MID | 85 | 40.0 | 3.64 | 7.15 | 71.3 | Raw top 100 |
+| 76 | Omar Marmoush | Man City | FWD | 82 | 50.0 | 6.30 | 6.68† | 71.2 | Raw top 100 |
+| 77 | Jeremy Jacquet | Liverpool | DEF | 77 | 55.0 | 5.68† | 6.96† | 71.1 | Raw top 100 |
+| 78 | Nordi Mukiele | Sunderland | DEF | 81 | 16.0 | 4.88 | 7.13 | 71.0 | Raw top 100 |
+| 79 | Michael Kayode | Brentford | DEF | 81 | 40.0 | 3.30 | 7.01 | 70.8 | Raw top 100 |
+| 80 | James Garner | Everton | MID | 82 | 45.0 | 3.34 | 7.40 | 70.7 | Raw top 100 |
+| 81 | Dango Ouattara | Brentford | MID | 79 | 35.0 | 4.87 | 6.97 | 70.5 | Raw top 100 |
+| 82 | Adam Wharton | Crystal Palace | MID | 82 | 70.0 | 3.60 | 7.01 | 70.4 | Raw top 100 |
+| 83 | Mats Wieffer | Brighton | DEF | 79 | 25.0 | 4.52 | 7.02 | 70.1 | Raw top 100 |
+| 84 | James Hill | Bournemouth | DEF | 78 | 23.0 | 4.55 | 7.18 | 70.1 | Raw top 100 |
+| 85 | Junior Kroupi | Bournemouth | MID | 80 | 70.0 | 6.12 | 6.93 | 69.9 | Raw top 100 |
+| 86 | Marco Palestra | Chelsea | DEF | 78 | 35.0 | 5.68† | 6.96† | 69.8 | Raw top 100 |
+| 87 | Benjamin White | Arsenal | DEF | 81 | 30.0 | 4.69 | 6.96† | 69.4 | Raw top 100 |
+| 88 | Enzo Le Fée | Sunderland | MID | 80 | 28.0 | 4.52 | 7.14 | 69.2 | Raw top 100 |
+| 89 | Noah Okafor | Leeds | MID | 77 | 25.0 | 6.32 | 6.94 | 69.0 | Raw top 100 |
+| 90 | Jack Grealish | Man City | MID | 82 | 20.0 | 4.62 | 7.21 | 69.0 | Raw top 100 |
+| 91 | Patrick Dorgu | Man Utd | MID | 78 | 35.0 | 4.63 | 7.16 | 68.9 | Raw top 100 |
+| 92 | Mateus Fernandes | Spurs | MID | 80 | 50.0 | 3.54 | 7.24 | 68.9 | Raw top 100 |
+| 93 | Lukás Hornícek | Newcastle | GK | 77 | 18.0 | 6.04† | 6.96† | 68.8 | Raw top 100 |
+| 94 | Rayan Vitor Simplício Rocha | Bournemouth | MID | 79 | 60.0 | 5.43 | 6.94† | 68.8 | Raw top 100 |
+| 95 | Bazoumana Touré | Newcastle | MID | 78 | 50.0 | 5.60† | 6.94† | 68.7 | Raw top 100 |
+| 96 | Giorgi Mamardashvili | Liverpool | GK | 83 | 28.0 | 3.53 | 6.96† | 68.5 | Raw top 100 |
+| 97 | Shumaira Mheuka | Chelsea | FWD | 76† | 28.2† | 90.00 | 6.68† | 68.2 | Raw top 100 |
+| 98 | Rayan Aït-Nouri | Man City | DEF | 81 | 40.0 | 3.81 | 6.96† | 68.0 | Raw top 100 |
+| 99 | Nico González Iglesias | Man City | MID | 81 | 40.0 | 3.64 | 7.13 | 68.0 | Raw top 100 |
+| 100 | Kobbie Mainoo | Man Utd | MID | 81 | 70.0 | 3.33 | 7.01 | 67.7 | Raw top 100 |
+| 105 | Neco Williams | Nott'm Forest | DEF | 80 | 28.0 | 3.33 | 7.08 | 67.5 | Three-player club floor |
+| 110 | Ousmane Diomande | Nott'm Forest | DEF | 77† | 42.0 | 5.68† | 6.96† | 66.7 | Three-player club floor |
+| 118 | Carl Rushworth | Coventry City | GK | 76 | 16.0 | 6.04† | 6.96† | 65.7 | Three-player club floor |
+| 128 | Konstantinos Tzolakis | Hull City | GK | 75† | 18.0 | 6.04† | 6.96† | 63.8 | Three-player club floor |
+| 140 | Harvey Cartwright | Hull City | GK | 75† | 17.0† | 6.04† | 6.96† | 62.9 | Three-player club floor |
+| 142 | Norman Bassette | Coventry City | FWD | 76† | 28.2† | 9.55† | 6.68† | 62.7 | Three-player club floor |
+| 146 | Mason Burstow | Hull City | FWD | 76† | 23.5† | 22.50 | 6.68† | 62.2 | Three-player club floor |
+| 147 | Antonee Robinson | Fulham | DEF | 80 | 22.0 | 3.09 | 7.16 | 61.7 | Three-player club floor |
+| 161 | Robin Roefs | Sunderland | GK | 81 | 28.0 | 3.89 | 6.95 | 60.4 | Three-player club floor |
+| 168 | Gonzalo García | Fulham | FWD | 75 | 30.0 | 9.55† | 6.68† | 59.4 | Three-player club floor |
+| 169 | Alex Iwobi | Fulham | MID | 80 | 20.0 | 3.98 | 7.04 | 59.4 | Three-player club floor |
+| 177 | George Shepherd | Coventry City | MID | 77† | 27.6† | 5.60† | 6.94† | 57.9 | Three-player club floor |
+| 178 | Kjell Scherpen | Ipswich Town | GK | 75† | 8.0 | 6.04† | 6.96† | 57.8 | Three-player club floor |
+| 206 | George Hirst | Ipswich Town | FWD | 76† | 25.8† | 6.42 | 6.68† | 55.0 | Three-player club floor |
+| 219 | Abdoul Ouattara | Ipswich Town | DEF | 77† | 15.0 | 5.68† | 6.96† | 54.0 | Three-player club floor |
 
-The list should be read as a model input, not an eternal verdict on the league's best hundred footballers. Its value is consistency and coverage. The raw rank remains visible so readers can see exactly where the club-floor rule changes the published list.
+† Arithmetic peer-mean imputation: position mean for EA, five-year points per 90 and FotMob; position-by-age-band mean, then position/league fallback, for Transfermarkt. Imputed inputs remain in the ranking but increase the uncertainty assigned to the relevant squad.
 
-Its shape also matters more than a debate over one borderline selection. The table gives the simulation a consistent measure of elite concentration and squad depth while keeping the adjustments visible enough to challenge or replace later.
+## From players to clubs
 
-## Separating recent history from current squad strength
+The player score is an input rather than the team forecast itself. For each club, the squad component builds a valid 1-4-4-2 core, adds four depth players and retains an elite-tail term from its top three players. The blend is 70% core, 20% depth and 10% elite quality. That construction prevents a club with several highly rated attackers but an incomplete defence from receiving the same squad score as a balanced team.
+
+The historical component uses five seasons of points per game and goal difference per game, standardised within season and division, with recent years weighted more heavily. Championship seasons are standardised within the Championship and shifted before entering the Premier League scale, rather than comparing raw second-tier points with top-flight points. The club base is then a 50:50 blend of historical and current-squad strength, so a transfer-heavy summer can move a club without erasing what repeated league performance says about it.
 
 [[image2]]
 
-*Figure 2. Five-season history against current squad strength; bubble size shows top-100 representation and colour shows contextual uncertainty.*
+*Figure 2. Five-season historical strength against the four-metric current-squad score; bubble size is published-list representation and colour is the share of core inputs imputed.*
 
-History and squad quality agree at the very top, but the distance from the diagonal is where the forecast becomes interesting. A club above its historical position may have recruited faster than results have caught up. A club below it may still carry a strong recent record while its current squad, manager or availability picture has weakened.
+Both axes are standard scores, so a one-unit movement means one league standard deviation rather than one point or one million euros. Standardisation puts player composites and historical performance onto a common scale. Bubble area represents the count of selected players, while colour shows data completeness. Clubs above the 45-degree line are rated more strongly by current personnel than by recent results; clubs below it are being supported more by history than by the present squad layer.
 
-The five-season window also prevents one extraordinary or disastrous campaign from becoming the whole prior. Recent seasons receive more weight, but older evidence keeps the model from declaring a permanent new order after a single year. Current players can then move that baseline rather than merely repeat it.
+The upper-right group is strong by both definitions and is consequently robust to modest changes in weighting. The more interesting clubs are those away from the diagonal. They tell us where a forecast is relying on a proposition: that a newly assembled squad will outperform its club history, or that an established structure will extract more than the apparent individual talent suggests.
 
-## Establishing a structural baseline
+This graph is also why imputation is not just a table-cleaning detail. A market-value estimate inserted from positional peers is suitable for maintaining a complete feature matrix, but it does not contain the same information as an observed valuation. The Disruption Engine therefore turns higher imputation shares into wider shocks rather than awarding false certainty to tidy data.
+
+## The Foundations Engine
+
+The Foundations Engine starts from the 50:50 historical/squad club standard score. Before each simulated season, every club receives a persistent Gaussian season shock with base magnitude `K = 0.42`. “Persistent” matters: the same latent good or bad season affects all 38 fixtures, producing correlated results instead of pretending every surprise is an isolated coin flip. A sensitivity pass at `K = 0.20`, `0.42` and `0.70` tests how much the table depends on that volatility judgement.
+
+For each home-away fixture, the engine converts the two shocked strengths and a home term into win, draw and loss probabilities using a three-outcome softmax. If the latent scores are `z_H`, `z_D` and `z_A`, the probability of outcome `j` is `p(j) = exp(z_j) / Σ_k exp(z_k)`. Softmax is used because the three probabilities must be positive and sum to one, while strength differences can still have a nonlinear effect. A calibrated coefficient of 0.45 controls how sharply a quality gap becomes a match advantage.
+
+The model plays every ordered fixture in each of 10,000 seasons, awards three points for a win and one for a draw, and stores the entire points distribution. It is intentionally sparse: it asks how far stable structural quality can take us before adding narrative variables. Its intervals therefore capture match randomness and a correlated season state, but not named transfer, coaching or workload mechanisms.
 
 [[image3]]
 
-*Figure 3. Model 1's complete structural forecast, including expected points, 10–90% intervals and title probability.*
+*Figure 3. Foundations Engine expected points and 10–90% simulation intervals, with the K sensitivity result alongside.*
 
-Model 1 is the base case: a mixture of weighted five-season history and current squad quality, translated into match strength and simulated over a full schedule. The mean points tell us where the structural evidence centres each club; the interval is the more honest output because it shows how many very different seasons remain compatible with the same inputs.
+The dots are Monte Carlo means and the horizontal whiskers are the 10th and 90th percentiles of the simulated seasons. The sensitivity panel changes one structural hyperparameter while holding the evidence layer and match mechanism fixed. If rankings or gaps reverse as K moves through the range, the conclusion depends heavily on that volatility choice even when its base-run interval looks narrow.
 
-This model favours Arsenal and Manchester City because both the historical and player layers place them at the front. It is intentionally conservative. It assumes strength persists unless the simulation's season-level randomiser, K, or match outcomes provide enough evidence to move it.
+The model's leading pair is stable because their underlying squad and historical scores are both high. Increasing K does not simply add identical noise to the final points column; it creates season-long states in which challengers can repeatedly perform above expectation. That is why volatility affects the chance of an upset season more strongly than it affects the mean order.
 
-## Turning certainty into an explicit choice
+The Foundations Engine should be read as the clean base case. It is valuable precisely because its assumptions are limited and inspectable. Where it disagrees sharply with the richer engines, the question becomes which additional mechanism (form, transfers, management or workload) is doing the work.
+
+## The Disruption Engine
+
+The Disruption Engine begins from the same structural base and then decomposes uncertainty into independent latent shocks. It includes a base season term, a larger coach term for changed managers, a transfer term scaled by squad churn, a heavy-tailed promotion or second-year term and a data-quality term scaled by imputation. These shocks are sampled once per club-season so their effects persist, reflecting the fact that an unsuccessful tactical change or unusually effective recruitment window tends to influence many fixtures.
+
+Promotion uncertainty uses a Student-t draw rather than a normal draw. The heavier tails allow rare but plausible outcomes (an unexpectedly competitive promoted side or a collapse) to occur more often than a Gaussian assumption would permit. European participation adds both a season-level workload effect and intermittent match-level fatigue. Stadium-specific home bonuses preserve the possibility that home advantage is heterogeneous rather than one league-wide constant.
+
+After those contextual states are drawn, the engine uses the same calibrated three-outcome match mechanism and simulates the full schedule 10,000 times. Sharing the match link with Foundations isolates the effect of contextual assumptions: differences between the two engines arise from their uncertainty structures, not from an unrelated scoring rule. This makes the comparison closer to a controlled model experiment.
 
 [[image4]]
 
-*Figure 4. Title probability under low, base and high K, showing how season-level uncertainty changes apparent confidence.*
+*Figure 4. Disruption Engine points distributions and the relative scale of its coach, transfer, promotion, workload and data-quality shocks.*
 
-K is not a secret adjustment used to produce a preferred champion. It is a sensitivity control for everything a structural model cannot know in August: whether finishing runs hot or cold, whether a tactical change works immediately, and whether a run of close games breaks in one direction. Increasing K widens the range of possible seasons without rewriting the underlying evidence.
+The interval plot comes directly from the simulated seasons, while the component panel shows the standard deviation assigned to each mechanism. A transfer window can improve or weaken a season, so the model samples direction while the chart displays magnitude. Independent components add in variance space, allowing several modest shocks to create a materially wider season distribution without any single factor dominating.
 
-The chart shows why a title percentage should never appear without an uncertainty philosophy. Low K converts a small quality edge into strong confidence. Higher K allows more challengers and more reversals. The base setting is therefore a declared judgement about how volatile one Premier League season can be, not a discovered law of football.
+The contextual engine remains close to Foundations at the top because Manchester City and Arsenal are supported by deep player layers and recent performance. Further down, its intervals widen where promotion status, churn or missing observations make the baseline less secure. Wider ranges are the model's answer to seasons with more ways to go right or wrong.
 
-## Letting context and feedback disagree
+The factorisation keeps coach, transfer, promotion, workload and data quality from disappearing into one residual standard deviation. Their magnitudes are scenario choices informed by football structure, giving the simulation distinct ways for a season to depart from its baseline.
 
-Model 2 decomposes uncertainty into club-specific mechanisms: stadium strength, a zero-centred new-coach effect, transfer churn, promotion uncertainty, European workload and match-level availability. Its premise is that disruption is uneven. A new manager can improve one club and delay another; European competition creates fatigue in particular weeks rather than subtracting an arbitrary number of points in August.
+## The Momentum Engine
 
-Model 3 uses a regularised gradient-boosted classifier trained on five chronological seasons of pre-match Elo, rolling points, goal difference, venue form, rest and season progress. Elo and form update after each simulated fixture, while heavy-tailed regime shocks allow rare breakout or collapse seasons. Its 2025/26 holdout log loss of 1.058 beats the unconditional 1.082 baseline modestly—useful evidence, but nowhere near a licence to call the algorithm an oracle.
+The Momentum Engine is a chronological supervised-learning model built at match level. A histogram gradient-boosting classifier estimates home-win, draw and away-win probabilities from pre-match Elo difference, rolling points-per-game difference, rolling goal-difference difference, venue-specific performance, rest-day difference, division and season progress. Gradient boosting fits a sequence of shallow decision trees to residual error, which allows nonlinear thresholds and interactions without requiring a manually specified formula for every relationship.
+
+Every feature is computed only from information available before the match. The 2025/26 season is held out chronologically rather than sampled randomly, avoiding leakage from later matches into earlier predictions. On that holdout, multiclass log loss is 1.058 compared with 1.082 for the unconditional outcome-frequency baseline. Log loss is preferred to accuracy because it rewards calibrated probability assignments and heavily penalises confident errors; a 0.40/0.30/0.30 forecast and a 0.90/0.05/0.05 forecast should not receive the same credit when both select the same outcome.
+
+For season simulation, the model is refitted on all five training seasons, the league is played in chronological rounds, and Elo and rolling-form state are updated after every simulated result. A heavy-tailed regime shock allows team trajectories to move beyond ordinary match noise. Probability temperature is calibrated at 0.65 so the distribution of simulated champion totals matches the historical scoring environment; lower temperature sharpens the largest class probabilities without changing their ordering. This complete dynamic season is run 10,000 times.
 
 [[image5]]
 
-*Figure 5. Each club's three expected-points estimates, connected by their full spread; the diamond is the weighted consensus.*
+*Figure 5. Momentum Engine points distributions and its chronological holdout comparison against a frequency baseline.*
 
-The connected ranges reveal whether apparent certainty comes from shared evidence or shared assumptions. Arsenal and Manchester City remain strong in every engine, but several clubs—particularly those facing managerial change, squad turnover or promotion—move materially depending on whether structure, context or feedback receives the greater voice.
+Histogram gradient boosting bins continuous features before searching tree splits, reducing computational cost and regularising noisy thresholds. The holdout bars compare multiclass log loss and Brier score rather than in-sample fit. The simulation then predicts recursively: a sampled match changes future Elo and form features, so hot and cold runs propagate through the schedule. This feedback is why the Momentum Engine can differ materially from a static strength model even when both begin with similar teams.
 
-That variation is precisely why the models are kept separate. Averaging three near-identical formulas would only disguise one opinion as an ensemble. Here Model 1 can be wrong because history persisted less than expected, Model 2 because contextual effects were mis-signed, and Model 3 because learned relationships failed to transfer. Different failure modes make the comparison useful.
+The largest disagreements are informative. Momentum is notably higher on Bournemouth and lower on Spurs and Chelsea than the two structural engines. Those gaps say the recent match-state patterns and nonlinear interactions learned by the classifier are telling a different story from squad/history strength. That conflict is more useful than the average alone.
 
-## Combining the season distributions
+The modest holdout improvement earns Momentum 25% of the consensus rather than a majority share. Its role is to challenge the base case with a genuinely different mechanism, capturing relationships the structural engines miss without allowing the most flexible model to dominate the result.
+
+## Where the engines disagree
 
 [[image6]]
 
-*Figure 6. Title probabilities from the structural, contextual and machine-learning engines alongside the weighted consensus.*
+*Figure 6. Three model means for every club; the connecting line is the distance from the lowest to the highest engine. No consensus marker is shown.*
 
-The leading conclusion is not that Arsenal are certain champions. It is that Arsenal and Manchester City occupy effectively the same title tier: 37.2% and 36.7% in the weighted view, with Liverpool retaining a meaningful 17.9% route. A half-point difference is ranking convenience, not substantive separation.
+For club `i`, the displayed distance is `max_m(P_im) − min_m(P_im)`, where `m` indexes the three engines and `P` is mean simulated points. It is simply the range from the lowest model mean to the highest. Near-identical estimates remain visible as layered shapes, while the consensus point is omitted because an average would sit inside every line by construction and disguise the distance the chart is meant to reveal.
 
-Below the leaders, the probabilities communicate asymmetry better than expected rank alone. Some clubs have similar central points but different chances of reaching the top four or falling into relegation because their simulated distributions have different widths and tails. The distribution contains the forecast; the mean is only its centre.
+Manchester City's three means are separated by only 0.3 points. Arsenal's are separated by 3.0. At the other extreme, Bournemouth spans 10.8 points, Spurs 9.8 and Coventry City 8.0. Those are not rounding errors. They identify clubs whose outlook depends strongly on whether one believes structural strength, contextual shocks or recursively updated form is the better description of 2026/27.
 
-| Rank | Club | M1 pts | M1 title | M2 pts | M2 title | M3 pts | M3 title | Final pts | Final title | Top four | Relegated |
-|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 1 | Arsenal | 78.2 | 37.9% | 78.1 | 36.0% | 76.3 | 38.0% | 77.7 | 37.2% | 91.2% | 0.0% |
-| 2 | Man City | 78.2 | 37.5% | 78.6 | 39.0% | 75.2 | 31.9% | 77.6 | 36.7% | 90.8% | 0.0% |
-| 3 | Liverpool | 72.8 | 17.2% | 73.9 | 19.3% | 70.1 | 16.8% | 72.6 | 17.9% | 77.8% | 0.0% |
-| 4 | Man Utd | 60.4 | 1.7% | 61.1 | 1.6% | 62.3 | 5.4% | 61.2 | 2.6% | 31.7% | 0.7% |
-| 5 | Chelsea | 60.6 | 1.9% | 60.5 | 1.5% | 54.3 | 1.0% | 59.0 | 1.5% | 24.5% | 1.6% |
-| 6 | Aston Villa | 58.5 | 1.2% | 59.7 | 1.1% | 57.5 | 2.6% | 58.8 | 1.5% | 22.8% | 1.3% |
-| 7 | Newcastle | 58.2 | 1.2% | 60.5 | 1.2% | 54.2 | 0.8% | 58.1 | 1.1% | 21.1% | 1.7% |
-| 8 | Spurs | 55.6 | 0.7% | 54.6 | 0.2% | 47.9 | 0.2% | 53.3 | 0.4% | 10.7% | 5.1% |
-| 9 | Nott&#x27;m Forest | 51.0 | 0.2% | 49.8 | 0.0% | 52.4 | 0.8% | 50.9 | 0.3% | 6.6% | 5.9% |
-| 10 | Bournemouth | 48.1 | 0.1% | 46.4 | 0.0% | 53.8 | 0.8% | 48.8 | 0.2% | 5.5% | 9.3% |
-| 11 | Brighton | 47.5 | 0.1% | 46.9 | 0.0% | 51.1 | 0.4% | 48.2 | 0.2% | 4.0% | 9.8% |
-| 12 | Brentford | 46.1 | 0.1% | 46.8 | 0.0% | 47.9 | 0.3% | 46.9 | 0.1% | 3.0% | 12.1% |
-| 13 | Crystal Palace | 47.4 | 0.1% | 45.2 | 0.0% | 47.2 | 0.1% | 46.5 | 0.1% | 2.5% | 13.2% |
-| 14 | Everton | 45.4 | 0.1% | 44.1 | 0.0% | 47.2 | 0.2% | 45.3 | 0.1% | 2.0% | 15.0% |
-| 15 | Fulham | 44.9 | 0.0% | 45.2 | 0.0% | 45.9 | 0.1% | 45.3 | 0.0% | 1.9% | 15.9% |
-| 16 | Leeds | 41.6 | 0.0% | 44.1 | 0.0% | 47.5 | 0.2% | 44.1 | 0.1% | 1.9% | 19.4% |
-| 17 | Sunderland | 40.9 | 0.0% | 40.2 | 0.0% | 41.8 | 0.0% | 40.9 | 0.0% | 0.7% | 29.6% |
-| 18 | Ipswich Town | 39.7 | 0.0% | 39.3 | 0.0% | 40.7 | 0.1% | 39.8 | 0.0% | 0.6% | 34.4% |
-| 19 | Coventry City | 34.1 | 0.0% | 35.7 | 0.0% | 43.4 | 0.1% | 37.1 | 0.0% | 0.7% | 47.2% |
-| 20 | Hull City | 29.6 | 0.0% | 28.2 | 0.0% | 32.4 | 0.0% | 29.8 | 0.0% | 0.0% | 77.7% |
+The names make the disagreement readable. “Foundations” means persistent club quality, “Disruption” means explicit season context, and “Momentum” means learned dynamic match state. The labels do not imply that one engine is conservative and another optimistic for every club; each is a compact description of the causal story encoded by its features and simulation process.
 
-The central ranks are close enough that a small change in form or availability can reorder several clubs without changing the broad structure of the forecast. Expected position should therefore be read as a midpoint, not a fixed destination.
+## Historical calibration and confidence
 
-The tail probabilities add the information the rank removes. They distinguish a stable mid-table profile from a similarly ranked club whose simulations include both European contention and a meaningful relegation risk.
+The last ten champions scored 93, 100, 98, 99, 86, 93, 89, 91, 84 and 85 points. All ten exceeded 80 and the mean was 91.8. The earlier model scale under-produced elite totals, so the match-strength coefficient and Momentum probability temperature are now selected against the distribution of the **highest realised points total in each simulated season**. This is important: calibration does not force Manchester City, Arsenal or any named favourite above 80 expected points. It makes the simulated league capable of producing champion totals on the scale the competition has actually required.
 
-## Seeing the whole argument at readable scale
+The consensus uses a mixture of season draws: 35% Foundations, 40% Disruption and 25% Momentum, for 10,000 mixture draws. The expected points are the mean of that mixture. Confidence combines two quantities: the standard deviation within the mixed simulations and the distance among the three model means. The uncertainty index is `sqrt(s_i² + d_i²)`, where `s_i` is the consensus simulation standard deviation and `d_i` is model distance. League terciles translate the index into High, Medium and Low labels, while the numeric 10–90% interval remains visible.
 
 [[image7]]
 
-*Figure 7. A large-format evidence board connecting player representation, squad and historical strength, structural uncertainty, model disagreement and the final title distribution.*
+*Figure 7. Historical champion calibration on the left; consensus 10–90% intervals and confidence classes on the right.*
 
-The vertical board is designed to keep each chart legible at normal article width. Read from top to bottom, it shows the chain of inference rather than presenting a collage: who supplies the squad signal, how that signal compares with history, what the structural model does with it, where the engines disagree and how the final probabilities are formed.
+Calibration matches the mean of the highest points total in each simulated season rather than fitting one club's forecast. The intervals are quantiles of the weighted mixture, so they carry both the spread within each engine and the differences between them. The coloured class is inverse uncertainty: “High” means a smaller combined uncertainty index, not a greater expected points total or a greater probability of finishing in a particular position.
 
-The advantage of the combined view is diagnostic. If the conclusion feels too bullish for a club, the reader can identify the source of that confidence. Arsenal and City's advantage enters through both history and squad strength, survives the K sensitivity test and appears in all three engines. The model is confident that they belong to the leading tier, but not confident about which of them finishes first.
+The distinction is clearest in the examples raised by the graph. Arsenal is high-confidence because all three engines place it in a narrow elite band, even though individual simulated seasons still vary. Bournemouth is low-confidence because the Momentum Engine is roughly eleven points above the Disruption Engine. A single standard error around an averaged forecast would miss that structural uncertainty.
 
-## What I would predict
+The final table stays with expected points from each engine, consensus expected points and confidence. Title, top-four and relegation percentages are omitted because small modelling changes near those cut-offs can move the headline more than the underlying season outlook.
 
-My narrow call is Arsenal, but the defensible prediction is a two-club title tier rather than a single ordained winner. Arsenal's weighted 37.2% is only 0.5 percentage points above Manchester City's 36.7%; that gap is far smaller than the uncertainty in squad availability, tactical adaptation or a few close matches. Liverpool are the clear third route and the club most capable of turning a two-team expectation into a three-team race.
+| Rank | Club | Foundations | Disruption | Momentum | Consensus | Confidence |
+|---:|---|---:|---:|---:|---:|---|
+| 1 | Man City | 87.6 | 87.9 | 87.5 | 87.7 | High (80%: 78–97) |
+| 2 | Arsenal | 84.9 | 84.6 | 87.7 | 85.5 | High (80%: 75–96) |
+| 3 | Liverpool | 74.5 | 75.6 | 78.5 | 75.9 | High (80%: 64–88) |
+| 4 | Chelsea | 67.2 | 67.2 | 60.3 | 65.3 | Low (80%: 52–78) |
+| 5 | Man Utd | 63.5 | 64.1 | 69.9 | 65.3 | Low (80%: 52–78) |
+| 6 | Newcastle | 56.5 | 58.9 | 54.0 | 56.8 | Medium (80%: 43–70) |
+| 7 | Aston Villa | 53.9 | 54.9 | 56.6 | 55.0 | Medium (80%: 42–68) |
+| 8 | Brighton | 51.5 | 50.9 | 56.7 | 52.5 | Low (80%: 40–66) |
+| 9 | Bournemouth | 50.9 | 49.1 | 59.9 | 52.5 | Low (80%: 39–67) |
+| 10 | Spurs | 53.9 | 53.0 | 44.0 | 51.0 | Low (80%: 36–65) |
+| 11 | Brentford | 46.6 | 47.3 | 47.7 | 47.2 | High (80%: 35–60) |
+| 12 | Crystal Palace | 48.3 | 46.0 | 46.3 | 46.8 | Medium (80%: 34–60) |
+| 13 | Leeds | 44.0 | 46.4 | 49.6 | 46.3 | Medium (80%: 34–59) |
+| 14 | Nott'm Forest | 42.7 | 41.4 | 47.9 | 43.6 | Low (80%: 31–57) |
+| 15 | Everton | 40.4 | 39.5 | 42.2 | 40.5 | High (80%: 29–53) |
+| 16 | Fulham | 38.7 | 39.4 | 39.9 | 39.5 | High (80%: 27–52) |
+| 17 | Coventry City | 35.8 | 37.4 | 43.8 | 38.3 | Low (80%: 26–52) |
+| 18 | Sunderland | 35.9 | 35.0 | 35.2 | 35.5 | High (80%: 24–48) |
+| 19 | Ipswich Town | 35.4 | 35.1 | 34.4 | 35.1 | Medium (80%: 22–49) |
+| 20 | Hull City | 30.6 | 28.9 | 25.5 | 28.6 | Medium (80%: 17–40) |
 
-The deeper finding is that the models agree more on hierarchy than on exact outcomes. They consistently identify the same leading group, yet differ on the size of the gaps and on several volatile clubs underneath it. That is where new coaches, European schedules and feedback from early results matter most. Tottenham, Chelsea, Manchester United and the promoted teams should be treated as distributions with unusually consequential tails, not as fixed positions.
+## What the forecast says now
 
-This also explains why an apparently modest ensemble is preferable to a spectacularly certain algorithm. Football seasons contain regime changes that historical data cannot observe in advance. A model should reward strong evidence while leaving room for those breaks. The purpose of the three-engine design is not to eliminate judgement, but to put the judgement where readers can inspect it.
+[[image8]]
 
-The best preseason forecast is not the one that produces the neatest table. It is the one that shows which assumptions create the table, how often other tables occur, and what new evidence would make us change our minds. On that standard, Arsenal are the smallest possible favourite, Manchester City are essentially level, Liverpool remain live, and the uncertainty is the result.
+*Figure 8. Synthesis board: the three engines, their distance, consensus points, confidence and the historical scoring scale.*
 
-## Methods and original sources
+All three engine panels use the same points scale and percentile convention, so their positions can be compared directly. The distance panel removes consensus to expose disagreement, while the final bars use colour for confidence rather than adding another probability axis. The statistical meaning of each mark stays consistent as the board moves from individual engines to disagreement and consensus.
 
-- [Full Elite analysis notebook](https://github.com/accidentalscientist/elite-analytics-articles-2026/blob/main/notebooks/13_premier_league_2026_27_forecast.ipynb)
+Manchester City leads the calibrated consensus on 87.7 expected points, with Arsenal on 85.5 and Liverpool on 75.9. The gap between the first two is meaningful but not decisive: expected points average across title-winning, ordinary and disappointing seasons. A recent champion benchmark averaging 91.8 can coexist with a favourite below 90 because the identity of the champion varies across simulations and the season maximum is higher than any one club's unconditional mean.
 
-Sources: [EA SPORTS FC 26](https://www.ea.com/games/ea-sports-fc/ratings?gender=0&orderBy=rank&page=1), [Fantasy Premier League](https://fantasy.premierleague.com/api/bootstrap-static/), [football-data.co.uk](https://www.football-data.co.uk/englandm.php), [Premier League manager guide](https://www.premierleague.com/en/news/4679012/meet-the-202627-premier-league-clubs-managers), and [2026/27 qualification summary](https://www.premierleague.com/en/news/4671514/summer-2026-key-football-dates-for-your-calendar).
+The middle of the table is less orderly. Chelsea and Manchester United are virtually tied in consensus but arrive there differently; Newcastle has a higher consensus than Aston Villa but broader confidence; Bournemouth and Spurs sit near one another while their model distances are among the league's largest. These are precisely the cases where reporting one decimal place without an uncertainty label would be most misleading.
+
+At the bottom, the consensus places Coventry City, Sunderland, Ipswich Town and Hull City in the most difficult band, but their intervals overlap several established clubs and the models do not agree equally about all of them. The call is comparative vulnerability: August has not resolved three discrete relegation places.
+
+## What I would change next time
+
+If I rebuilt this forecast tomorrow, I would spend less time adding another engine and more time strengthening the evidence the three already consume. I would refresh every source at the same snapshot, replace as many imputed player values as possible, model likely minutes and availability, and make the promoted-team adjustment respond to the strength of each Championship season.
+
+The working recipe would remain transparent. The source notebook records the snapshot files, matching rules, feature construction, chronological holdout, calibration grids, random seeds and simulation counts. The inputs came from the official [Fantasy Premier League player registry](https://fantasy.premierleague.com/api/bootstrap-static/), [EA Sports FC ratings](https://www.ea.com/en/games/ea-sports-fc/ratings/leagues-ratings/premier-league/13?page=1), [Transfermarkt Premier League valuations](https://www.transfermarkt.com/premier-league/marktwerte/wettbewerb/GB1), [FotMob Premier League player ratings](https://www.fotmob.com/leagues/47/stats/season/27110/players/rating), the [Vaastav FPL historical archive](https://github.com/vaastav/Fantasy-Premier-League) and [football-data.co.uk match results](https://www.football-data.co.uk/englandm.php).
+
+What I would keep is the disagreement. A fourth model would only earn its place by bringing a genuinely different view of the season. The next forecast should improve the evidence, not conceal the distances.

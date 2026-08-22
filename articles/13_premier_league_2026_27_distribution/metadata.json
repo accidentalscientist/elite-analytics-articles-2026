@@ -4,39 +4,45 @@
   "date": "2026-08-03",
   "category": "sport",
   "featured": true,
-  "summary": "A data-science forecast of the 2026/27 Premier League built from player quality, five-season club history and three deliberately different simulation engines.",
-  "key_takeaway": "Arsenal and Manchester City form one title tier, separated by only half a percentage point; model disagreement is evidence to interpret, not noise to hide.",
-  "source_notebooks": [],
+  "summary": "A 2026/27 Premier League forecast built from four player-value measures, five-season club history and three technically distinct 10,000-season simulation engines.",
+  "key_takeaway": "Manchester City lead the calibrated consensus at 87.7 expected points, with Arsenal close behind at 85.5, but the margin between them is nowhere near as decisive as it looks. Confidence depends on both simulation variance within each engine and the visible distance among the three: some clubs agree across Foundations, Disruption and Momentum, others (like Bournemouth) see an eleven-point spread between engines that a single averaged forecast would hide entirely. The disagreement is the finding, not the noise around it.",
+  "source_notebooks": [
+    "https://github.com/accidentalscientist/elite-analytics-articles-2026/blob/main/notebooks/13_premier_league_2026_27_forecast.ipynb"
+  ],
   "analysis_notebook": "../../notebooks/13_premier_league_2026_27_forecast.ipynb",
-  "cover_image": "figures/07-three-model-title-probabilities.png",
+  "cover_image": "figures/01-forecast-cover.png",
   "inline_figures": [
     {
       "file": "figures/02-club-representation.png",
-      "caption": "The constrained Premier League 100 by club, separating merit places from additions required by the three-player club floor."
+      "caption": "The raw top 100 is preserved first, followed by 15 additions required to give every club at least three representatives."
     },
     {
       "file": "figures/03-history-vs-squad-strength.png",
-      "caption": "Five-season historical strength against current squad strength, with bubble size showing top-100 representation and colour showing contextual uncertainty."
+      "caption": "Five-season historical strength against the four-metric squad score, with representation and imputation made visible."
     },
     {
-      "file": "figures/04-model-one-all-clubs.png",
-      "caption": "Model 1's structural base case: expected points, 10–90% interval and title probability for every club."
+      "file": "figures/04-foundations-engine.png",
+      "caption": "The Foundations Engine's expected points, empirical 10–90% intervals and season-volatility sensitivity."
     },
     {
-      "file": "figures/05-k-sensitivity.png",
-      "caption": "Title probability under low, base and high K, showing how the uncertainty parameter controls apparent certainty."
+      "file": "figures/05-disruption-engine.png",
+      "caption": "The Disruption Engine's points distributions and explicit contextual uncertainty components."
     },
     {
-      "file": "figures/06-model-disagreement-all-clubs.png",
-      "caption": "All three expected-points estimates for every club, their spread, the consensus point and final ranking."
+      "file": "figures/06-momentum-engine.png",
+      "caption": "The Momentum Engine's recursively simulated points distributions and chronological holdout evaluation."
     },
     {
-      "file": "figures/07-three-model-title-probabilities.png",
-      "caption": "Title probabilities from the structural, contextual and machine-learning engines alongside the weighted consensus."
+      "file": "figures/07-model-disagreement.png",
+      "caption": "The three model means and their full distance for each club, with no consensus point shown."
+    },
+    {
+      "file": "figures/08-calibration-confidence.png",
+      "caption": "The ten-season champion-points calibration and consensus confidence derived from variance plus model distance."
     },
     {
       "file": "figures/99-synthesis-board.png",
-      "caption": "A large-format synthesis board that brings the article's five principal pieces of evidence into one readable argument."
+      "caption": "A synthesis board connecting the three engines, disagreement, historical scale, consensus and confidence."
     }
   ]
 }

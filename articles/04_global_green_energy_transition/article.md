@@ -1,18 +1,20 @@
-The country producing the most renewable electricity is not automatically the country furthest through an energy transition. Scale, population, energy demand and the shape of the wider system can produce very different leaders. The more useful question is not “who is first?” but “first according to what?”
+The country producing the most renewable electricity is not automatically the country furthest through an energy transition. Scale, population, energy demand and the shape of the wider system can produce very different leaders, and the chart above is already proof of that: it names a single clear winner, and this piece exists because that answer changes completely depending on what you ask instead. The more useful question is not "who is first?" but "first according to what?"
 
 Five views of the same global dataset produce five different answers: absolute output rewards scale, capacity per person rewards intensity, renewable share measures system penetration, country histories reveal momentum, and clusters reveal repeatable pathways. Leadership is multi-dimensional, and any ranking that hides its denominator hides its argument.
 
 ## The largest systems dominate the first scoreboard
 
-The opening figure ranks countries by renewable electricity generated in the most recent year of the dataset. China is in a category of its own at roughly 2,185 TWh, followed by the United States, Brazil and Canada. This is consequential leadership: large volumes in large systems affect global emissions, supply chains, manufacturing learning and technology costs.
+The chart opening this piece ranks countries by renewable electricity generated in the most recent year of the dataset. China is in a category of its own at roughly 2,185 TWh, followed by the United States, Brazil and Canada. This is consequential leadership: large volumes in large systems affect global emissions, supply chains, manufacturing learning and technology costs.
 
-But absolute output partly measures the size of the country being measured. India can produce far more renewable electricity than a smaller European economy while still having much less capacity relative to its population or energy needs. The chart answers an important question—where is the most clean electricity being generated?—without answering how deeply a system has changed.
+But absolute output partly measures the size of the country being measured. India can produce far more renewable electricity than a smaller European economy while still having much less capacity relative to its population or energy needs. The chart answers an important question (where is the most clean electricity being generated) without answering how deeply a system has changed, which is exactly what the next four views try to fix.
 
 ## Per-person capacity creates a different group of leaders
 
 [[image1]]
 
 *Figure 2. Renewable generating capacity per person in 2020 brings smaller hydro-rich and fast-building systems into view.*
+
+The same underlying capacity figures used for the opening chart were divided by each country's population for a single reference year, replacing the scale-driven ranking with an intensity-driven one built from identical raw data.
 
 Changing the denominator transforms the ranking. Bhutan reaches about 3,026 watts of renewable capacity per person, well ahead of Paraguay and Uruguay. China remains in the top group, but no longer dominates it. Brazil also performs strongly, while countries largely absent from the absolute-output chart become visible.
 
@@ -24,6 +26,8 @@ This is not a correction that makes the first chart wrong. It measures a differe
 
 *Figure 3. Renewables as a share of primary energy in 2020 measures system penetration rather than electricity volume alone.*
 
+This view swaps the numerator too, not just the denominator: instead of electricity capacity per person, it expresses renewables as a share of total primary energy consumption, which pulls in transport and heating fuel alongside anything generated on the grid.
+
 The primary-energy share introduces a tougher test. Iceland reaches roughly 86.8%, Norway 71.0%, Sweden 51.1% and Brazil 49.5%. These results elevate systems where renewable resources supply a large part of total energy, not merely electricity generation.
 
 The distinction matters because a country can build large quantities of renewable power while transport, heating and industry remain fossil-dependent. Penetration reveals how far clean resources have moved into the overall energy balance. It is closer to the lived transition, though it is also shaped by geography and inherited resources that other countries cannot simply copy.
@@ -34,6 +38,8 @@ The distinction matters because a country can build large quantities of renewabl
 
 *Figure 4. Country-by-year renewable electricity reveals distinct trajectories beneath the latest-year totals.*
 
+Rather than one snapshot year, each country's full renewable-electricity series from 2000 to 2020 was arranged as a heatmap by country and year, turning the static ranking into a picture of how each system actually got there.
+
 The historical heatmap turns the ranking into motion. China's acceleration becomes especially visible after roughly 2010; the United States follows a steadier climb; Brazil and Canada begin from substantial renewable bases; India and several European countries grow along different paths. Countries that look similar in the final year did not necessarily arrive there through similar transitions.
 
 Trajectory is crucial because today's rank is partly inherited. A high-resource country can begin near the top and change slowly, while a lower-ranked country can be transforming rapidly. Policy learning should therefore compare the shape of growth, not only the endpoint.
@@ -43,6 +49,8 @@ Trajectory is crucial because today's rank is partly inherited. A high-resource 
 [[image4]]
 
 *Figure 5. Clustering average renewable-electricity trajectories separates scale leaders, steady growers and lower-output pathways.*
+
+The same year-by-year trajectories were fed into a clustering step, grouping countries by the shape of their growth curve rather than its level, so a small steady grower and a large steady grower can land in the same descriptive group.
 
 The cluster analysis groups countries by how their renewable output evolves. One pathway contains the extraordinary scale-up associated with the largest systems; another shows more gradual growth from a meaningful base; others remain lower or flatter. The clusters are descriptive rather than causal, but they create a better set of questions.
 
@@ -64,11 +72,11 @@ Together, the five images reject the idea of a single green-energy champion. Chi
 
 Good comparison begins by matching the measure to the decision. Global emissions strategy cares about scale. Infrastructure intensity cares about capacity per person. Economy-wide transition cares about energy share. Investment and policy learning care about trajectory. No country has to lead every category to offer a useful model.
 
-The best transition is not the one that wins a single scoreboard. It is the one whose progress is deep, durable and understandable enough for others to learn from.
+The best transition is not the one that wins a single scoreboard. It is the one whose progress is deep, durable and understandable enough for others to learn from. If I had to defend one number from this piece in five years, it would not be China's total or Bhutan's per-person figure; it would be the shape of the trajectory chart, because a curve is much harder to fake than a single-year rank, and it's the one view here that actually rewards consistency over headline.
 
-## Evidence and provenance
+## Methods and original sources
 
-The dataset covers 2000–2020 and combines renewable electricity, generating capacity and primary-energy indicators. The supplementary per-person and primary-energy-share figures are derived from the same source data as the original analysis. Rankings remain sensitive to coverage, definitions, national boundaries and resource endowments; the clusters describe patterns rather than proving why they occurred.
+The dataset covers 2000 to 2020 and combines renewable electricity, generating capacity and primary-energy indicators, built in Python with pandas handling the per-capita and share calculations, scikit-learn's clustering grouping the trajectory shapes, and matplotlib rendering the rankings, heatmap and cluster charts. The supplementary per-person and primary-energy-share figures are derived from the same source data as the original analysis. Rankings remain sensitive to coverage, definitions, national boundaries and resource endowments; the clusters describe patterns rather than proving why they occurred.
 
 - [Full Elite analysis notebook](https://github.com/accidentalscientist/elite-analytics-articles-2026/blob/main/notebooks/04_global_green_energy_transition.ipynb)
 - [Original Global Green Energy Analysis](https://github.com/accidentalscientist/daily_data_analytics_july2025/blob/main/week03_day05/global_green_part1.ipynb)

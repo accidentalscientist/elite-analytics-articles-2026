@@ -5,7 +5,7 @@
   "category": "energy",
   "featured": false,
   "summary": "Surface temperature, satellite observations, atmospheric CO₂ and the electricity mix form a chain from measured climate change to practical response.",
-  "key_takeaway": "Independent records converge on a warming climate under rising greenhouse-gas concentrations, while the energy system provides a measurable lever for response.",
+  "key_takeaway": "Surface thermometers, satellites and atmospheric CO₂ measurements share almost nothing in common except their conclusion: independent instruments, different physics, and they still converge on a warming climate under rising greenhouse-gas concentrations. Uncertainty at the margins of any one record does not erase agreement at the centre of all of them. The electricity mix is where that evidence turns into a measurable, actionable lever for response.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week00/climate_change_proof_part5.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week00/climate_change_proof_part6.ipynb",

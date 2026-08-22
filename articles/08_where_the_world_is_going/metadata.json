@@ -5,7 +5,7 @@
   "category": "data",
   "featured": false,
   "summary": "Demography, health, trade and macroeconomic balance reveal national capacity that a GDP ranking cannot show on its own.",
-  "key_takeaway": "Future opportunity depends on converting human potential into durable resilience; the strongest evidence comes from combinations of indicators, not one champion metric.",
+  "key_takeaway": "Future opportunity depends on converting human potential into durable resilience, and no single indicator captures that conversion on its own. The strongest evidence comes from combinations: demography plus health plus trade plus macroeconomic stability, each partial on its own and together a genuine map of capacity. The countries best placed for what comes next are the ones able to turn several partial advantages into one resilient system, not the ones topping any single league table.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part1.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_august2025/blob/main/week01/where_the_world_is_going_part2.ipynb",

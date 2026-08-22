@@ -1,10 +1,10 @@
-A personal best is memorable because it compresses a long process into one number. A full running record tells a different story: what was normal, what was exceptional, when performance changed and whether the apparent breakthrough became a new baseline. Across 118 parkruns, the distinction is clear.
+A personal best is memorable because it compresses a long process into one number. A full running record tells a different story: what was normal, what was exceptional, when performance changed and whether the apparent breakthrough became a new baseline. Across 118 parkruns, summarised in the distribution above, the distinction is clear.
 
 The central argument is that the 23:31 personal best in June 2021 was not a lucky isolated result. It arrived inside a concentrated sequence of improving runs. But the record after it also shows why a breakthrough should not be confused with permanent capacity: form, age-grade performance, season and uncertainty continue to move.
 
 ## The whole distribution gives the personal best meaning
 
-The opening histogram places every run in the story. Most results cluster around the central band near 27–29 minutes, with slower observations to one side and a distinct fast tail to the other. The mean and median sit close together, while the fastest performances are unusual enough to stand apart.
+The histogram opening this piece places every run in the story. Most results cluster around the central band near 27-29 minutes, with slower observations to one side and a distinct fast tail to the other. The mean and median sit close together, while the fastest performances are unusual enough to stand apart.
 
 This is more honest than beginning with the record time alone. A personal best describes the outer edge of demonstrated performance; the distribution describes what was repeatable. Progress should be read through both.
 
@@ -14,6 +14,8 @@ This is more honest than beginning with the record time alone. A personal best d
 
 *Figure 2. The long-term time series reveals a concentrated mid-2021 run of progressively faster performances.*
 
+Every recorded time was plotted chronologically and smoothed with a rolling average, so a genuine multi-week improving trend would be visible as a sustained slope rather than lost among the week-to-week noise of individual results.
+
 The smoothed trajectory falls sharply through early and mid-2021, while the individual points cluster in the low-24-minute range and culminate at 23:31. The shape resembles a runway: several improving performances create evidence of form before the fastest result arrives.
 
 The chart cannot identify the cause. It contains no training load, sleep, injury, weather or course-condition variables. It can still reject one interpretation: the personal best did not appear randomly inside an otherwise ordinary block. It was part of the strongest sustained phase in the record.
@@ -22,7 +24,9 @@ The chart cannot identify the cause. It contains no training load, sleep, injury
 
 [[image2]]
 
-*Figure 3. Age-grade performance rises with the 2021 breakthrough, falls afterwards and begins improving again near the end of the record.*
+*Figure 3. Age-grade performance rises with the 2021 breakthrough and begins improving again near the end of the record.*
+
+Each run's raw time was converted to an age-grade percentage against the standard age-related benchmark and plotted on the same timeline as the raw times, so the 2021 phase could be checked against a second, independent measure rather than trusted on the clock alone.
 
 Age grade asks a different question from raw time by comparing performance with an age-related benchmark. It does not replace the clock, but it helps distinguish faster running from the changing context in which that time was achieved. The 2021 peak remains visible, strengthening the case that the period represented more than a favourable stopwatch result.
 
@@ -32,9 +36,11 @@ The later recovery is also informative. Raw times do not return to the personal-
 
 [[image3]]
 
-*Figure 4. Average run time by calendar month across August 2018–May 2025; lower bars indicate faster performance.*
+*Figure 4. Average run time by calendar month across August 2018 to May 2025; lower bars indicate faster performance.*
 
-May is the fastest month in the record at about 25:47, while September is the slowest at about 29:13—a difference of roughly three minutes and 26 seconds. March is also relatively quick at 27:00, while January, February, October and December average around 28 minutes or slower.
+Every run was grouped by calendar month regardless of year and averaged, then the same data was separately broken out by year within each month, so the chart could be checked for whether an apparent seasonal pattern actually holds once individual years are pulled apart.
+
+May is the fastest month in the record at about 25:47, while September is the slowest at about 29:13, a difference of roughly three minutes and 26 seconds. March is also relatively quick at 27:00, while January, February, October and December average around 28 minutes or slower.
 
 The bars should not be read as a weather law. Each month combines different years and very different versions of the runner. June's yearly averages range from about 23:50 in its fastest year to 29:57 in its slowest; April ranges from roughly 24:51 to 30:16. Sample sizes differ too: March has 15 runs across four years, while October has four runs across two.
 
@@ -44,7 +50,9 @@ The apparent seasonal pattern is therefore partly a form pattern. The exceptiona
 
 [[image4]]
 
-*Figure 5. Historical results and a 26-week forecast show a wide uncertainty interval around a central expectation well above the 2021 personal best.*
+*Figure 5. Historical results and a 26-week forecast show a wide uncertainty interval around a central expectation above the 2021 personal best.*
+
+An ARIMA model was fitted to the full historical time series, then used to seed 5,000 Monte Carlo simulated paths forward across a 26-week horizon, producing both a central expectation and a full distribution of plausible outcomes rather than a single predicted number.
 
 The forecast combines an ARIMA time-series model with 5,000 Monte Carlo paths. Its central expectation sits around 26:38 for the best forecasted time, while the simulation places the chance of another sub-25-minute result at about 14%. The widening interval is as important as the centre: individual parkruns remain highly variable.
 
@@ -66,11 +74,11 @@ The five views give the personal story its shape. The distribution defines norma
 
 Running progress is not a staircase in which every personal best becomes the next permanent floor. Consistency builds a range, conditions and training occasionally align to produce a breakthrough, and the record afterwards continues to vary. Later runs are not failures because they do not repeat the fastest one.
 
-The coherent theme is patient accumulation. Most Saturdays establish the baseline; a few reveal what the accumulated work can produce.
+The coherent theme is patient accumulation. Most Saturdays establish the baseline; a few reveal what the accumulated work can produce. I ran this analysis half-expecting the forecast to talk me out of hoping for another sub-25, and it mostly did (a 14% chance is not nothing, but it isn't close either), and I think that's the right thing for a personal analysis to do: tell you the honest odds and let you decide what to do with them anyway.
 
-## Evidence and provenance
+## Methods and original sources
 
-The analysis combines the distribution, smoothed time series, age grade, monthly averages and ARIMA/Monte Carlo forecast for one runner's 118-event record. It is personal descriptive analysis, not medical or training advice. Forecasts extend historical relationships and do not include future changes in training, health, course, weather or motivation.
+The analysis combines the distribution, smoothed time series, age grade, monthly averages and ARIMA/Monte Carlo forecast for one runner's 118-event record, built in Python with pandas handling the grouping and rolling-average calculations, statsmodels fitting the ARIMA model, and matplotlib rendering the histogram, time-series and bar charts. It is personal descriptive analysis, not medical or training advice. Forecasts extend historical relationships and do not include future changes in training, health, course, weather or motivation.
 
 - [Full Elite analysis notebook](https://github.com/accidentalscientist/elite-analytics-articles-2026/blob/main/notebooks/11_the_long_run_parkrun.ipynb)
 - [Parkrun pacing and elevation](https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day02/parkrun_data.ipynb)

@@ -5,7 +5,7 @@
   "category": "sport",
   "featured": false,
   "summary": "A 118-event parkrun record shows how a genuine 2021 breakthrough sits inside a wider distribution shaped by form, age grade, season and uncertainty.",
-  "key_takeaway": "The 2021 personal best was part of a concentrated performance peak, but progress remains a range rather than a permanently reset baseline.",
+  "key_takeaway": "The 2021 personal best was part of a genuinely concentrated performance peak, confirmed independently by both the raw time series and age-grade performance, not a lucky isolated Saturday. But the forecast puts the odds of matching it again at only about 14%, which is the honest answer to what happens next. Progress is a shifting range with occasional breakthroughs, not a staircase where every best becomes the new floor.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day02/parkrun_data.ipynb",
     "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day02/parkrun2_data.ipynb",

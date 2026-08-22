@@ -5,7 +5,7 @@
   "category": "energy",
   "featured": false,
   "summary": "A spatial view of Australia's electricity transition, from national generation growth to the state, technology and network constraints beneath it.",
-  "key_takeaway": "Australia's next unit of transition value will increasingly come from connecting and coordinating renewable assets, not merely counting them.",
+  "key_takeaway": "A national renewables percentage hides a country running five or six genuinely different transitions at once, split by state, resource mix and network access. Australia's next unit of transition value will increasingly come from connecting and coordinating existing assets, not from counting new nameplate capacity. The map, not the percentage, is the better guide to where the next bottleneck will actually appear.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day11/aus_energy_part1.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day01/intro_ausenergy.ipynb"

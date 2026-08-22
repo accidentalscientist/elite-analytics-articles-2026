@@ -5,7 +5,7 @@
   "category": "energy",
   "featured": false,
   "summary": "Twenty-five years of NEM data show that Australia's transition is changing generation, timing, carbon intensity and price formation at different speeds.",
-  "key_takeaway": "Renewable growth has changed the generation mix; the decisive next step is coordinating transmission, storage, flexible demand and market design around it.",
+  "key_takeaway": "Renewable growth has already changed what generates Australia's electricity, and the data shows that change compounding fast enough that it is no longer the open question. What remains open is whether transmission, storage, flexible demand and market design can move at the same pace as the generation mix already has. Coal's decline is the visible transition; coordinating everything built around it is the decisive one.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day06/nem_data_part1.ipynb",
     "https://github.com/accidentalscientist/daily_data_analytics_june2025/blob/main/week01_day07/nem_data_part2.ipynb"

@@ -4,8 +4,8 @@
   "date": "2026-02-02",
   "category": "energy",
   "featured": false,
-  "summary": "A household power record reveals recurring demand patterns across years, days, hours and circuits—and where useful flexibility may live.",
-  "key_takeaway": "Electricity demand is behavioural infrastructure: measuring its rhythm allows flexible loads to help balance a cleaner grid.",
+  "summary": "A household power record reveals recurring demand patterns across years, days, hours and circuits, and where useful flexibility may live.",
+  "key_takeaway": "Electricity demand is behavioural infrastructure: nobody in this household was trying to be flexible, they were just living their week, and a measurable pattern showed up anyway. Measuring that rhythm well, down to the circuit and the hour, turns ordinary routine into a genuine tool for balancing a cleaner grid. The flexibility was already there; it just needed to be seen.",
   "source_notebooks": [
     "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day29/household_power.ipynb",
     "https://github.com/accidentalscientist/daily-data-analytics-may2025/blob/main/day30/household_power_part2.ipynb"
