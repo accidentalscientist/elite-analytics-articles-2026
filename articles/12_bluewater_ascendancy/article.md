@@ -1,16 +1,16 @@
-Empire: Total War has always held an awkward place in my gaming life. It is not the cleanest game the series has made, and it is nowhere near the most polished. It is full of quirks, brittle systems, hesitant diplomacy, and campaign behaviours that feel held together with sealing wax and hope. And yet I keep returning to it, because no other Total War game captures the same sense of scale: not necessarily purely of war but a scale of **consequence**. Reinforcing the fort near Paris means that the troops in Bengal stay home. A fleet leaving the Caribbean can tip a European war and leave highly valuable sugar and tobacco trade dreadfully exposed. A single fragile colony can become the hinge on which an empire turns. However, my feeling was that this promise was never truly delivered. 
+Empire: Total War has always held an awkward place in my gaming life. It is not the cleanest game the series has made, and it is nowhere near the most polished: quirks, brittle systems, hesitant diplomacy, campaign behaviours held together with sealing wax and hope. And yet I keep returning to it, because no other Total War game captures the same sense of scale, not of armies, but of consequence. A decision made in Paris can matter in Bengal. A fleet leaving the Caribbean can tip a European war and leave a season's sugar and tobacco trade dreadfully exposed. A single fragile colony can become the hinge on which an empire turns.
 
-That is the promise of Empire, and it remains one of the most exciting the series has ever made. Bluewater Ascendancy grew out of a stubborn wish to see that promise show up more often than the base game allows.
+That is the promise of Empire, and it is one of the most exciting any strategy game has ever made. The trouble is that vanilla Empire only delivers on it in flashes: the numbers underneath the map rarely make the sea matter as much as the premise says it should. Bluewater Ascendancy grew out of a stubborn wish to see that promise show up more often than the base game allows.
 
 ## The wager behind the mod
 
-Most rebalance mods begin with a complaint. Mine began with a suspicion: that Empire is secretly a trade & colonialism game wearing the coat of a war game, and that it plays better the moment you stop apologising for it and focus on the trade. All war after all, is about securing resources and finances, no Total War game has greater potential at this then does Empire. 
+Most rebalance mods begin with a complaint. Mine began with a suspicion: that Empire is secretly a trade and colonisation game wearing the coat of a war game, and that it plays better the moment you stop apologising for it and lean into the trade. War, in the end, is usually about securing resources and finances, and no Total War game has more raw potential for that story than Empire does.
 
-Vanilla Empire gestures at this. It has trade nodes, ports, commodities, plantations, chartered companies, and sea lanes. But it prices them timidly, as though embarrassed by its own eighteenth century. Afraid it might offend someone about what happened 300 years ago and is not responsible for. 
+Vanilla Empire gestures at this. It has trade nodes, ports, commodities, plantations, chartered companies, and sea lanes. But it prices them timidly, as though embarrassed by its own eighteenth century, as though it might offend someone for a history it is not itself responsible for.
 
 The century itself was not embarrassed. It was an era of sugar islands and slaving routes, of monopolies defended by cannon, of governments financed less by conquest than by commerce carried across water. The sea was not decoration. It was infrastructure. Empire knows this in its bones and forgets it in its numbers.
 
-> **The core idea:** Empire is at its best when sea lanes, colonial footholds, and fragile frontier states create pressure across the whole map. Bluewater Ascendancy does not add new systems. It re-prices the ones already there until the campaign's incentives point back toward what makes the game special. Finally delivering on what I was certain the promise of the game truly was. 
+> **The core idea:** Empire is at its best when sea lanes, colonial footholds, and fragile frontier states create pressure across the whole map. Bluewater Ascendancy does not add new systems. It re-prices the ones already there until the campaign's incentives point back toward what makes the game special.
 
 Everything else in the mod follows from that wager. I did not want to replace Empire with a different game. I wanted to make the campaign breathe: to let more of Empire actually happen.
 
@@ -18,9 +18,9 @@ Everything else in the mod follows from that wager. I did not want to replace Em
 
 Before I could make the sea matter, I had to stop the land from strangling everything.
 
-Empire has a habit of turning the campaign map into a defensive tangle. Forts are interesting in moderation, but in practice they slow the game in ways that do not produce better strategy. They block movement, interrupt wars, reward passive play, and make an already timid AI even more hesitant. Moreover, the AI was basically incapable of taking down a decently defended fort. Instead of dynamic eighteenth-century campaigning, you end up with a map of unambitious Monarchs & Generals. Wars freeze around little works of earth and stone rather than spilling across regions the way they should.
+Empire has a habit of turning the campaign map into a defensive tangle. Forts are interesting in moderation, but in practice they slow the game in ways that do not produce better strategy: the AI is often unable to take down a well-defended fort at all, so wars stall instead of resolving. They block movement, interrupt wars, reward passive play, and make an already timid AI even more hesitant. Instead of dynamic eighteenth-century campaigning, you end up with a map of small obstacles, each one making every theatre feel sticky. Wars freeze around little works of earth and stone rather than spilling across regions the way they should.
 
-So the first design principle was narrow and deliberate: keep the campaign's flavour, but remove the things that make it stagnate. Bluewater Ascendancy disables new fort construction and fort upgrades while leaving the broader structure intact. Existing forts remain where the start position places them; the map simply stops metastasising into a fortress maze. The result is that finally armies move, campaigns develop, colonial wars travel and you actually have to defend your territory. *The map recovers its capacity to surprise.*
+So the first design principle was narrow and deliberate: keep the campaign's flavour, but remove the things that make it stagnate. Bluewater Ascendancy disables new fort construction and fort upgrades while leaving the broader structure intact. Existing forts remain where the start position places them; the map simply stops metastasising into a fortress maze. Armies move. Campaigns develop. Colonial wars travel, and defending territory actually matters again. The map recovers its capacity to surprise.
 
 [[image1]]
 
@@ -32,19 +32,19 @@ This is the least glamorous change in the mod and, I suspect, the one that does 
 
 With the land unstuck, the trade economy could finally carry weight.
 
-Bluewater Ascendancy pushes hard here. Commodity base prices are tripled. Trade-node commodity quantities are tripled. Sea trade-route values from trading ports, commercial ports, commercial basins, and trading companies are all tripled. Plantation output is doubled. Coffee, cotton, furs, ivory, spices, sugar, tea, tobacco: each becomes something worth building a strategy around rather than something you should consider upgrading later.
+Bluewater Ascendancy pushes hard here. Commodity base prices are tripled. Trade-node commodity quantities are tripled. Sea trade-route values from trading ports, commercial ports, commercial basins, and trading companies are all tripled. Plantation output is doubled. Coffee, cotton, furs, ivory, spices, sugar, tea, tobacco: each becomes something worth building a strategy around rather than a rounding error in your treasury.
 
 [[image2]]
 
 *Figure 2. RPFM's commodities table with base prices tripled across the board, so coffee, cotton, sugar and the rest stop being a rounding error.*
 
-The point is to change what a player *wants*. When a Caribbean possession is worth genuine money, fleets stop being mere ferries and become the thing that protects your income. When a trade port is more than a small income bump, contesting one becomes a real campaign decision and blockading one matters a lot. The Atlantic and the Indian Ocean stop being scenery you sail past on the way to a European war and start being the war.
+The point is to change what a player *wants*. When a Caribbean possession is worth genuine money, fleets stop being mere ferries and become the thing that protects your income. When a trade port is more than a small income bump, contesting one becomes a real campaign decision, and blockading one becomes a real threat. The Atlantic and the Indian Ocean stop being scenery you sail past on the way to a European war and start being the war.
 
 [[image3]]
 
 *Figure 3. Trade and plantation values raised further across ports and colonial holdings, on top of the base commodity multiplier.*
 
-A maritime empire should *feel* materially different from a landlocked one. Under vanilla numbers it rarely does. Under these numbers, it finally must. Suddenly it is easy to understand why states of this period took such enormous risks for islands, coasts, and trading posts. The mod does not explain that logic to you. It lets you feel it in your ledger. And in that feeling is the real draw and power of a game like Empire: Total War. 
+A maritime empire should *feel* materially different from a landlocked one. Under vanilla numbers it rarely does. Under these numbers, it finally must. Suddenly it is easy to understand why states of this period took such enormous risks for islands, coasts, and trading posts. The mod does not explain that logic to you. It lets you feel it in your ledger, and that feeling is the real draw of a game like Empire.
 
 ## Third principle: a France that acts like France
 
@@ -88,4 +88,8 @@ That is the heart of it. Bluewater Ascendancy is not a rejection of vanilla Empi
 
 The roadmap from here is clear enough. The next real goal is making New France and New Spain cleanly playable without destabilising the campaign: careful start-position work, faction checks, diplomacy and menu testing, first-turn stability. One good change at a time is worth more than a pile of unstable ideas in a campaign that crashes before it becomes interesting.
 
-For now, the foundation holds. The map is less strangled by forts. The trade game is richer. France has genuine global weight. The smaller powers have a little more air. And Empire: Total War feels, at least to me, closer to the sweeping oceanic strategy game I always wanted it to be. That is why I made Bluewater Ascendancy: not to replace Empire, but to let more of Empire happen.
+For now, the foundation holds. The map is less strangled by forts. The trade game is richer. France has genuine global weight. The smaller powers have a little more air. Empire: Total War feels, at least to me, closer to the sweeping oceanic strategy game of scale and consequence it always promised to be, and closer to actually keeping that promise turn after turn. That is why I made Bluewater Ascendancy: not to replace Empire, but to let more of Empire happen.
+
+## Tools and provenance
+
+Everything here was built and inspected with RPFM (Rusted PackFile Manager), the community tool for reading and editing Total War's `.pack` database files and `.esf` save and start-position files. There is no notebook behind this one: the workbench is the game's own data tables, and the evidence is the screenshots throughout. Bluewater Ascendancy is a personal, ongoing project rather than a finished release, and the version discussed here is the one currently in testing.
